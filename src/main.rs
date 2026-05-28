@@ -1,4 +1,4 @@
 mod loops;
 fn main() {
-    println!("Hello, world!");
+    loops::loop_fn::print_one_to_hundred();
 }
