@@ -50,4 +50,28 @@ pub fn print_one_to_n_numbers(n: u32) {
             break;
         }
     }
+    //Output : 1 to 10
+}
+//Print L to R numbers
+pub fn print_l_to_r_numbers(l: u32, r: u32) {
+    //for loop
+    for i in l..=r {
+        println!("{i:?}");
+    }
+    //While loop
+    let mut num = r;
+    while num >= l {
+        println!("{num:?}");
+
+        num -= 1
+    }
+    //Loops
+    let mut count = l;
+    loop {
+        println!("{count:?}");
+        if count == r {
+            break;
+        }
+        count += 1;
+    }
 }
