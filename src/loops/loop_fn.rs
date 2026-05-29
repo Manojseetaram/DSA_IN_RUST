@@ -7,7 +7,7 @@
 
 pub fn print_one_to_hundred() {
     //for loop
-    for i in 1..=5.into() {
+    for i in 1..=5 {
         println!("{i:#?}")
     }
 
@@ -73,5 +73,36 @@ pub fn print_l_to_r_numbers(l: u32, r: u32) {
             break;
         }
         count += 1;
+    }
+}
+
+//All even number of one to 10
+pub fn even_numbers(l: u32, r: u32) {
+    let mut count = l;
+    loop {
+        if count > r {
+            break;
+        }
+        if count % 2 == 0 {
+            println!("even : {count}");
+        }
+        count += 1;
+    }
+
+    for i in l..=r {
+        if i % 2 == 0 {
+            println!("even  : {i:?}")
+        }
+    }
+
+    let mut num = r;
+    while num >= l {
+        if num > r {
+            break;
+        }
+        if num % 2 == 0 {
+            println!("even : {num:?}");
+        }
+        num -= 1;
     }
 }
