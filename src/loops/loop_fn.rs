@@ -154,3 +154,7 @@ pub fn multiplication_table(n: u32, limit: u32) {
         a += 1;
     }
 }
+pub fn last_digit_of_number(n: u32) {
+    let i = n;
+    println!("{}", i % 10);
+}
