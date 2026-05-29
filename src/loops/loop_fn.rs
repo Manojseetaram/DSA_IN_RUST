@@ -133,3 +133,24 @@ pub fn albhabets_a_to_z() {
         c += 1;
     }
 }
+//print multiplication table
+pub fn multiplication_table(n: u32, limit: u32) {
+    let mut i = 1;
+    while i <= limit {
+        println!("{n} x {i} = {}", n * i);
+        i += 1;
+    }
+
+    for i in 1..=limit {
+        println!("{n} x {i} = {}", n * i)
+    }
+    let mut a = 1;
+    loop {
+        if a > limit {
+            break;
+        }
+        println!("{n} x {a} = {}", n * a);
+
+        a += 1;
+    }
+}
