@@ -106,3 +106,30 @@ pub fn even_numbers(l: u32, r: u32) {
         num -= 1;
     }
 }
+
+//Prinitng A to z Alphbets
+pub fn albhabets_a_to_z() {
+    //for loop
+    for i in 'A'..='Z' {
+        println!("{:#?}", i);
+    }
+    //while loop
+    let mut ch = 'Z' as u8;
+    while ch >= 'A' as u8 {
+        println!("{:?}", ch as char);
+
+        if ch > 'Z' as u8 {
+            break;
+        }
+        ch -= 1
+    }
+    //Loops
+    let mut c = 'A' as u8;
+    loop {
+        println!("{:?}", c as char);
+        if c == 'Z' as u8 {
+            break;
+        }
+        c += 1;
+    }
+}
