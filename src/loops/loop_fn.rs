@@ -214,6 +214,7 @@ pub fn print_number_in_reverse(n: u32) {
 
 //DIGITS SUM
 pub fn digits_sum(n: u32) {
+    //Useing while loop
     let mut num = n;
     let mut r = 0;
     while num != 0 {
@@ -221,5 +222,25 @@ pub fn digits_sum(n: u32) {
         r = r + digit;
         num /= 10
     }
-    println!("{r}")
+    println!("{r}");
+
+    //Useing For loop
+    let mut num = 0;
+    for digit in n.to_string().chars().rev() {
+        num = num + digit.to_digit(10).unwrap()
+    }
+    println!("{num}");
+
+    //Using  loop
+    let mut rev = 0;
+    let mut num = n;
+    loop {
+        if num == 0 {
+            break;
+        }
+        let digit = num % 10;
+        rev = rev + digit;
+        num /= 10
+    }
+    println!("{rev}");
 }
