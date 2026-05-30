@@ -243,4 +243,16 @@ pub fn digits_sum(n: u32) {
         num /= 10
     }
     println!("{rev}");
+    //Output : 6
+}
+//Reverse and store in a vatiable ;
+pub fn rev_and_store_in_var(n: u32) -> u32 {
+    let mut ans = 0;
+    let mut num = n;
+
+    while num != 0 {
+        ans = ans * 10 + num % 10;
+        num /= 10
+    }
+    ans
 }
