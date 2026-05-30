@@ -166,6 +166,10 @@ pub fn print_number_in_reverse(n: u32) {
         println!(" reverse : {}", temp % 10);
         temp /= 10
     }
+    //Output
+    //3
+    //2
+    //1
     // Create actual reversed number
     let mut temp = n;
     let mut rev = 0;
@@ -177,4 +181,45 @@ pub fn print_number_in_reverse(n: u32) {
     }
 
     println!("Reversed number: {rev}");
+    //Output : Reversed number : 321
+
+    //Useing the for loop conevr to int to string
+    let mut a = String::new();
+    for digit in n.to_string().chars().rev() {
+        a.push(digit);
+    }
+    println!("For loop reverse : {a}");
+    //Out put : 321
+    let mut r = 0;
+    for digit in n.to_string().chars().rev() {
+        r = r * 10 + digit.to_digit(10).unwrap();
+    }
+    println!("{r}");
+    //Output : 321
+
+    //Useing loop
+    let mut rev = 0;
+    let mut num = n;
+    loop {
+        if num == 0 {
+            break;
+        }
+        let digit = num % 10;
+        rev = rev * 10 + digit;
+        num /= 10
+    }
+    println!("Loops : {rev}");
+    //Output : Loops : 321
+}
+
+//DIGITS SUM
+pub fn digits_sum(n: u32) {
+    let mut num = n;
+    let mut r = 0;
+    while num != 0 {
+        let digit = num % 10;
+        r = r + digit;
+        num /= 10
+    }
+    println!("{r}")
 }

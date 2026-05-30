@@ -8,4 +8,5 @@ fn main() {
     loops::loop_fn::multiplication_table(10, 10);
     loops::loop_fn::last_digit_of_number(1297);
     loops::loop_fn::print_number_in_reverse(123);
+    loops::loop_fn::digits_sum(111111);
 }
