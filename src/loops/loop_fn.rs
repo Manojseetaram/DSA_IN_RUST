@@ -279,3 +279,18 @@ pub fn palindrome_for_loop(n: u32) -> bool {
     }
     if rev == n { true } else { false }
 }
+
+pub fn loops_function() {
+    print_one_to_hundred();
+    print_one_to_n_numbers(10);
+    print_l_to_r_numbers(4, 10);
+    even_numbers(1, 10);
+    albhabets_a_to_z();
+    multiplication_table(10, 10);
+    last_digit_of_number(1297);
+    print_number_in_reverse(123);
+    digits_sum(111111);
+    println!("{}", rev_and_store_in_var(321));
+    println!("{}", palindrome(121));
+    println!("{}", palindrome_for_loop(212));
+}
