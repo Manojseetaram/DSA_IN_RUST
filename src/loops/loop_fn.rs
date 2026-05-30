@@ -154,7 +154,27 @@ pub fn multiplication_table(n: u32, limit: u32) {
         a += 1;
     }
 }
+//Last digit off number
 pub fn last_digit_of_number(n: u32) {
     let i = n;
     println!("{}", i % 10);
+}
+//Print number in reverse
+pub fn print_number_in_reverse(n: u32) {
+    let mut temp = n;
+    while temp != 0 {
+        println!(" reverse : {}", temp % 10);
+        temp /= 10
+    }
+    // Create actual reversed number
+    let mut temp = n;
+    let mut rev = 0;
+
+    while temp != 0 {
+        let digit = temp % 10;
+        rev = rev * 10 + digit;
+        temp /= 10;
+    }
+
+    println!("Reversed number: {rev}");
 }
