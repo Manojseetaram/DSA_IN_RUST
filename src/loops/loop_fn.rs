@@ -256,3 +256,26 @@ pub fn rev_and_store_in_var(n: u32) -> u32 {
     }
     ans
 }
+//PALINDROME
+pub fn palindrome(n: u32) -> bool {
+    //While loop
+    let mut rev = 0;
+    let mut num = n;
+    println!("inpur : {num }");
+    while num != 0 {
+        let digit = num % 10;
+        rev = rev * 10 + digit;
+        num /= 10
+    }
+    println!("sharma : {rev}");
+    if rev == n { true } else { false }
+    //Output  : 121 : true
+}
+pub fn palindrome_for_loop(n: u32) -> bool {
+    //For loop
+    let mut rev = 0;
+    for digit in n.to_string().chars().rev() {
+        rev = rev * 10 + digit.to_digit(10).unwrap()
+    }
+    if rev == n { true } else { false }
+}

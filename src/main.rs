@@ -10,4 +10,6 @@ fn main() {
     loops::loop_fn::print_number_in_reverse(123);
     loops::loop_fn::digits_sum(111111);
     println!("{}", loops::loop_fn::rev_and_store_in_var(321));
+    println!("{}", loops::loop_fn::palindrome(121));
+    println!("{}", loops::loop_fn::palindrome_for_loop(212));
 }
