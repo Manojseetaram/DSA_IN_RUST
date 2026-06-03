@@ -112,6 +112,34 @@ pub fn numbered_rectangle(n: u32) {
         println!()
     }
 }
+//Numbered rectagnle lets n and m value
+pub fn numeric_rectanagle(n: u32, m: u32) {
+    for abc in 1..=n {
+        for _ in 1..=m {
+            print!("{abc}")
+        }
+        println!()
+    }
+}
+//ABC rectangle
+pub fn abc_reactangle(n: u32, m: u32) {
+    for i in 0..n {
+        let ch = (b'A' + i as u8) as char;
+        for _ in 0..m {
+            print!("{ch}")
+        }
+        println!()
+    }
+}
+pub fn abc_rectangle_diff(n: u32, m: u32) {
+    for _ in 0..n {
+        for i in 0..m {
+            let ch = (b'A' + i as u8) as char;
+            print!("{ch}")
+        }
+        println!()
+    }
+}
 pub fn pattern_printing() {
     one_to_n_number(5);
     one_to_n_number_star(6);
@@ -126,4 +154,7 @@ pub fn pattern_printing() {
     hollow_pyramid(10);
     hollow_rev_pyramid(10);
     numbered_rectangle(5);
+    numeric_rectanagle(10, 3);
+    abc_reactangle(10, 6);
+    abc_rectangle_diff(10, 6);
 }
