@@ -103,6 +103,15 @@ pub fn hollow_rev_pyramid(n: u32) {
         println!()
     }
 }
+//Nuberd Rectangle
+pub fn numbered_rectangle(n: u32) {
+    for i in 1..=n {
+        for _ in 1..=n {
+            print!("{i}")
+        }
+        println!()
+    }
+}
 pub fn pattern_printing() {
     one_to_n_number(5);
     one_to_n_number_star(6);
@@ -116,4 +125,5 @@ pub fn pattern_printing() {
     hollow_sqaure_useing_m_and_n(10, 4);
     hollow_pyramid(10);
     hollow_rev_pyramid(10);
+    numbered_rectangle(5);
 }
