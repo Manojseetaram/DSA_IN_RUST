@@ -50,6 +50,20 @@ pub fn reverse_pyramid(n: u32) {
         println!("{}", "*".repeat(i as usize))
     }
 }
+//Hollow Square
+//Given n (no .of rows and cols ) , print the following pattern
+pub fn hollow_square(m: u32) {
+    for row in 1..=m {
+        for column in 1..=m {
+            if row == m || row == 1 || column == 1 || column == m {
+                print!("*");
+            } else {
+                print!(" ");
+            }
+        }
+        println!();
+    }
+}
 pub fn pattern_printing() {
     one_to_n_number(5);
     one_to_n_number_star(6);
@@ -59,4 +73,5 @@ pub fn pattern_printing() {
     sqare_star_print(5);
     pyramid_print(8);
     reverse_pyramid(12);
+    hollow_square(10);
 }
