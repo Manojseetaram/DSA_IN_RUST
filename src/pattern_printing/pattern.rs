@@ -64,6 +64,7 @@ pub fn hollow_square(m: u32) {
         println!();
     }
 }
+//Print Hollow squre
 pub fn hollow_sqaure_useing_m_and_n(n: u32, m: u32) {
     for row in 1..=n {
         for column in 1..=m {
@@ -74,6 +75,19 @@ pub fn hollow_sqaure_useing_m_and_n(n: u32, m: u32) {
             }
         }
         println!();
+    }
+}
+//Hollow Pyramid
+pub fn hollow_pyramid(n: u32) {
+    for row in 1..=n {
+        for column in 1..=n {
+            if row == n || row == 1 || column == 1 || column == row {
+                print!("*")
+            } else {
+                print!(" ")
+            }
+        }
+        println!()
     }
 }
 pub fn pattern_printing() {
@@ -87,4 +101,5 @@ pub fn pattern_printing() {
     reverse_pyramid(12);
     hollow_square(10);
     hollow_sqaure_useing_m_and_n(10, 4);
+    hollow_pyramid(10);
 }
