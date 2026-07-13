@@ -239,6 +239,27 @@ pub fn right_alinged_pyramid(n: i32) {
         i += 1;
     }
 }
+pub fn right_alinged_hollow_pyramid(n: i32) {
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= n - i {
+            print!("  ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            if j == 1 || j == i || i == n {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
 pub fn pattern_printing() {
     // one_to_n_number(5);
     // one_to_n_number_star(6);
@@ -259,5 +280,6 @@ pub fn pattern_printing() {
     /*     binary_pyramid(5); */
     /*    hollow_traingel(5); */
     // triangle(5);
-    right_alinged_pyramid(8);
+    /*   right_alinged_pyramid(8); */
+    right_alinged_hollow_pyramid(8);
 }
