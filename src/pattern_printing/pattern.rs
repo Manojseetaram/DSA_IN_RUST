@@ -204,7 +204,7 @@ pub fn triangle(n: i32) {
     while i <= n {
         let mut j = 1;
         while j <= i {
-            print!("*");
+            print!("* ");
             j += 1;
         }
         println!();
@@ -214,11 +214,29 @@ pub fn triangle(n: i32) {
     while i >= 1 {
         let mut j = 1;
         while j <= i {
-            print!("*");
+            print!("* ");
             j += 1;
         }
         println!();
         i -= 1;
+    }
+}
+pub fn right_alinged_pyramid(n: i32) {
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= n - i {
+            print!("  ");
+
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            print!("* ");
+            j += 1;
+        }
+        println!();
+        i += 1;
     }
 }
 pub fn pattern_printing() {
@@ -240,5 +258,6 @@ pub fn pattern_printing() {
     // abc_rectangle_diff(10, 6)
     /*     binary_pyramid(5); */
     /*    hollow_traingel(5); */
-    triangle(5);
+    // triangle(5);
+    right_alinged_pyramid(8);
 }
