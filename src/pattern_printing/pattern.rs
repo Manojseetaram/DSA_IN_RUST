@@ -338,7 +338,7 @@ pub fn reverse_hollow_tringel(n: i32) {
     }
 }
 pub fn dimond(n: i32) {
-    let mut i = 1;
+    let mut i = 0;
     while i <= n {
         let mut j = 1;
         while j <= n - i {
@@ -360,7 +360,7 @@ pub fn dimond(n: i32) {
         }
         let mut j = 1;
         loop {
-            print!(" ");
+            print!("");
 
             if j >= n - i {
                 break;
@@ -376,6 +376,69 @@ pub fn dimond(n: i32) {
             j += 1;
         }
         println!();
+        i -= 1;
+    }
+}
+pub fn hollow_dimand(n: i32) {
+    let mut i = 1;
+    loop {
+        let mut j = 1;
+        loop {
+            print!(" ");
+            if j > n - i {
+                break;
+            }
+            j += 1;
+        }
+        let mut j = 1;
+        loop {
+            if i == 1 || j == 1 || j == i {
+                print!("* ")
+            } else {
+                print!("  ")
+            }
+
+            if j == i {
+                break;
+            }
+            j += 1;
+        }
+        println!();
+        if i == n {
+            break;
+        }
+        i += 1;
+    }
+    let mut i = n - 1;
+    loop {
+        if i == 0 {
+            break;
+        }
+        let mut j = 1;
+
+        loop {
+            print!(" ");
+
+            if j > n - i {
+                break;
+            }
+            j += 1;
+        }
+        let mut j = 1;
+
+        loop {
+            if i == 1 || i == n || j == i || j == 1 {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+            if j == i {
+                break;
+            }
+            j += 1
+        }
+        println!();
+
         i -= 1;
     }
 }
@@ -403,7 +466,8 @@ pub fn pattern_printing() {
     /*     right_alinged_hollow_pyramid(8); */
     /*     center_traingle(8); */
     /* center_hollow_triangle(10); */
-    dimond(8);
+    /* dimond(8); */
     /*     reverse_traingel(8); */
     /*   reverse_hollow_tringel(8); */
+    hollow_dimand(5);
 }
