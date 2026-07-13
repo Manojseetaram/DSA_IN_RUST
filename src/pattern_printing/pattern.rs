@@ -315,6 +315,28 @@ pub fn reverse_traingel(n: i32) {
         i -= 1;
     }
 }
+
+pub fn reverse_hollow_tringel(n: i32) {
+    let mut i = n;
+    while i >= 1 {
+        let mut j = 1;
+        while j <= n - i {
+            print!(" ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            if i == 1 || i == n || j == i || j == 1 {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+            j += 1;
+        }
+        println!();
+        i -= 1;
+    }
+}
 // pub fn dimond(n: i32) {
 //
 // }
@@ -343,5 +365,6 @@ pub fn pattern_printing() {
     /*     center_traingle(8); */
     /* center_hollow_triangle(10); */
     /*    dimond(8); */
-    reverse_traingel(8);
+    /*     reverse_traingel(8); */
+    reverse_hollow_tringel(8);
 }
