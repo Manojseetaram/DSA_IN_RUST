@@ -257,6 +257,23 @@ pub fn right_alinged_hollow_pyramid(n: i32) {
             j += 1;
         }
         println!();
+        i += 1
+    }
+}
+pub fn center_traingle(n: i32) {
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= n - i {
+            print!(" ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            print!("* ");
+            j += 1
+        }
+        println!();
         i += 1;
     }
 }
@@ -281,5 +298,6 @@ pub fn pattern_printing() {
     /*    hollow_traingel(5); */
     // triangle(5);
     /*   right_alinged_pyramid(8); */
-    right_alinged_hollow_pyramid(8);
+    /*     right_alinged_hollow_pyramid(8); */
+    center_traingle(8);
 }
