@@ -314,5 +314,5 @@ pub fn loops_function() {
     // println!("{}", palindrome(121));
     // println!("{}", palindrome_for_loop(212));
     // println!("{}", palindrome_n(121))
-    factorial_number(5);
+    /*     factorial_number(5); */
 }

@@ -141,6 +141,29 @@ pub fn abc_rectangle_diff(n: u32, m: u32) {
         println!()
     }
 }
+pub fn binary_pyramid(n: i32) {
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        let mut num;
+        if i % 2 == 0 {
+            num = 1;
+        } else {
+            num = 0;
+        }
+        while j <= i {
+            print!("{num}");
+            if num == 0 {
+                num = 1;
+            } else {
+                num = 0
+            }
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
 pub fn pattern_printing() {
     // one_to_n_number(5);
     // one_to_n_number_star(6);
@@ -157,5 +180,6 @@ pub fn pattern_printing() {
     // numbered_rectangle(5);
     // numeric_rectanagle(10, 3);
     // abc_reactangle(10, 6);
-    // abc_rectangle_diff(10, 6);
+    // abc_rectangle_diff(10, 6)
+    binary_pyramid(5);
 }
