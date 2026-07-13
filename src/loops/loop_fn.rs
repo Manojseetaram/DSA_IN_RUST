@@ -4,7 +4,7 @@
 //Start Problem Statement
 
 //print 1 to 100
-
+#![allow(dead_code)]
 pub fn print_one_to_hundred() {
     //for loop
     for i in 1..=5 {
@@ -279,18 +279,40 @@ pub fn palindrome_for_loop(n: u32) -> bool {
     }
     if rev == n { true } else { false }
 }
+pub fn palindrome_n(n: i32) -> bool {
+    let mut i = n;
+    let mut sum = 0;
 
+    while i != 0 {
+        sum = sum * 10 + i % 10;
+        i = i / 10;
+    }
+
+    if sum == n { true } else { false }
+}
+pub fn factorial_number(n: i32) {
+    let mut fact = 1;
+    let mut i = n;
+    while i != 0 {
+        fact = fact * i;
+
+        i -= 1;
+    }
+    println!("{fact}");
+}
 pub fn loops_function() {
-    print_one_to_hundred();
-    print_one_to_n_numbers(10);
-    print_l_to_r_numbers(4, 10);
-    even_numbers(1, 10);
-    albhabets_a_to_z();
-    multiplication_table(10, 10);
-    last_digit_of_number(1297);
-    print_number_in_reverse(123);
-    digits_sum(111111);
-    println!("{}", rev_and_store_in_var(321));
-    println!("{}", palindrome(121));
-    println!("{}", palindrome_for_loop(212));
+    // print_one_to_hundred();
+    // print_one_to_n_numbers(10);
+    // print_l_to_r_numbers(4, 10);
+    // even_numbers(1, 10);
+    // albhabets_a_to_z();
+    // multiplication_table(10, 10);
+    // last_digit_of_number(1297);
+    // print_number_in_reverse(123);
+    // digits_sum(111111);
+    // println!("{}", rev_and_store_in_var(321));
+    // println!("{}", palindrome(121));
+    // println!("{}", palindrome_for_loop(212));
+    // println!("{}", palindrome_n(121))
+    factorial_number(5);
 }
