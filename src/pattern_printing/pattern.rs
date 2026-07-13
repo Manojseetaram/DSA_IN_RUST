@@ -442,6 +442,28 @@ pub fn hollow_dimand(n: i32) {
         i -= 1;
     }
 }
+pub fn crown(n: i32) {
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= i {
+            print!("*");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= 2 * n - 2 * i {
+            print!(" ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            print!("*");
+            j += 1
+        }
+        println!();
+        i += 1;
+    }
+}
 pub fn pattern_printing() {
     // one_to_n_number(5);
     // one_to_n_number_star(6);
@@ -469,5 +491,6 @@ pub fn pattern_printing() {
     /* dimond(8); */
     /*     reverse_traingel(8); */
     /*   reverse_hollow_tringel(8); */
-    hollow_dimand(5);
+    /* hollow_dimand(5); */
+    crown(5);
 }
