@@ -234,17 +234,41 @@ pub fn sort_zero_one() {
         }
         i += 1;
     }
+
     let mut i = 1;
     while i <= c0 {
         print!("0");
-        i += 1
+
+        i += 1;
     }
     let mut i = 1;
     while i <= c1 {
         print!("1");
         i += 1;
     }
-    println!()
+    println!();
+    let target = 0;
+    let mut count = 0;
+    let mut i = 0;
+    while i < n {
+        if a[i] == target {
+            count += 1;
+        }
+        i += 1;
+    }
+
+    println!("Total number of zeros : {count}");
+
+    let target = 1;
+    let mut count = 0;
+    let mut i = 0;
+    while i < n {
+        if a[i] == target {
+            count += 1;
+        }
+        i += 1;
+    }
+    println!("Total number of one : {count}")
 }
 pub fn arrays() {
     /*   input_output(); */
