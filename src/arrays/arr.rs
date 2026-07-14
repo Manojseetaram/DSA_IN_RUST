@@ -168,23 +168,39 @@ pub fn minmum_elemnt() {
     println!("minimum : {} , location : {}", ans, location)
 }
 pub fn search_in_an_array() {
-    let a = [1, 2, 5, 9, 10];
+    let a = [1, 2, 5, 9, 11];
     let n = 5;
     let mut found = false;
-    let search = 11;
+    let search = 19;
     let mut i = 0;
     while i < n {
         if a[i] == search {
-            println!("Number found ");
             found = true;
             break;
         }
         i += 1
     }
-    if !found {
-        println!("No found")
+    if found {
+        println!("Number found ");
+    } else {
+        println!("Not found")
     }
 }
+pub fn count_occurences() {
+    let a = [1, 2, 3, 4, 1, 1, 1];
+    let n = 7;
+    let target = 1;
+    let mut count = 0;
+    let mut i = 0;
+    while i < n {
+        if a[i] == target {
+            count += 1
+        }
+        i += 1
+    }
+    println!("{count}")
+}
+
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -194,5 +210,6 @@ pub fn arrays() {
     /*     some_of_array_usieng_two_pointers(); */
     /*  maximum_number_of_the_array(); */
     /*     minmum_elemnt(); */
-    search_in_an_array();
+    /* search_in_an_array(); */
+    count_occurences();
 }
