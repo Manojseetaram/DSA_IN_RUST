@@ -637,5 +637,5 @@ pub fn pattern_printing() {
     /*     crown(5); */
     /*     butterfly(8); */
     /*   inverted_dimond(5); */
-    hollow_butterfly(5);
+    /*   hollow_butterfly(5); */
 }
