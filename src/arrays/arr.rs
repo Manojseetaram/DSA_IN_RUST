@@ -200,7 +200,24 @@ pub fn count_occurences() {
     }
     println!("{count}")
 }
-
+pub fn sorted_array() {
+    let a = [1, 2, 3, 4, 4];
+    let n = 5;
+    let mut flag = false;
+    let mut i = 1;
+    while i < n {
+        if a[i] >= a[i - 1] {
+            flag = true;
+            break;
+        }
+        i += 1;
+    }
+    if flag {
+        println!("This is sorted array ")
+    } else {
+        println!("This is not sorted array")
+    }
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -211,5 +228,6 @@ pub fn arrays() {
     /*  maximum_number_of_the_array(); */
     /*     minmum_elemnt(); */
     /* search_in_an_array(); */
-    count_occurences();
+    /*     count_occurences(); */
+    sorted_array();
 }
