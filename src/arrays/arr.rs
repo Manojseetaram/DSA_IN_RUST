@@ -218,6 +218,34 @@ pub fn sorted_array() {
         println!("This is not sorted array")
     }
 }
+
+pub fn sort_zero_one() {
+    let a = [1, 1, 0, 1, 1, 0];
+    let n = 6;
+    let mut c0 = 0;
+    let mut c1 = 1;
+    let mut i = 1;
+
+    while i < n {
+        if a[i] == 0 {
+            c0 += 1;
+        } else {
+            c1 += 1;
+        }
+        i += 1;
+    }
+    let mut i = 1;
+    while i <= c0 {
+        print!("0");
+        i += 1
+    }
+    let mut i = 1;
+    while i <= c1 {
+        print!("1");
+        i += 1;
+    }
+    println!()
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -229,5 +257,7 @@ pub fn arrays() {
     /*     minmum_elemnt(); */
     /* search_in_an_array(); */
     /*     count_occurences(); */
-    sorted_array();
+    /*  sorted_array(); */
+    sort_zero_one();
 }
+
