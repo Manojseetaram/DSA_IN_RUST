@@ -154,12 +154,7 @@ pub fn maximum_number_of_the_array() {
 pub fn minmum_elemnt() {
     let a = [11, 2, 3, 4, 5, 6];
     let n = 6;
-    let mut b = [0; 6];
-    let mut i = 0;
-    while i <= n - 1 {
-        b[i] = a[n - i - 1];
-        i += 1
-    }
+
     let mut ans = a[0];
     let mut location = 1;
     let mut i = 0;
@@ -172,6 +167,24 @@ pub fn minmum_elemnt() {
     }
     println!("minimum : {} , location : {}", ans, location)
 }
+pub fn search_in_an_array() {
+    let a = [1, 2, 5, 9, 10];
+    let n = 5;
+    let mut found = false;
+    let search = 11;
+    let mut i = 0;
+    while i < n {
+        if a[i] == search {
+            println!("Number found ");
+            found = true;
+            break;
+        }
+        i += 1
+    }
+    if !found {
+        println!("No found")
+    }
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -180,6 +193,6 @@ pub fn arrays() {
     /*  some_of_array(); */
     /*     some_of_array_usieng_two_pointers(); */
     /*  maximum_number_of_the_array(); */
-    minmum_elemnt();
+    /*     minmum_elemnt(); */
+    search_in_an_array();
 }
-
