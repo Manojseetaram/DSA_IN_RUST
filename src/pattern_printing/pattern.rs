@@ -515,7 +515,7 @@ pub fn inverted_dimond(n: i32) {
             j += 1;
         }
         let mut j = 1;
-        while j <= 2 * n - 2 * i {
+        while j <= 2 * n - 2 * i + 1 {
             print!("  ");
             j += 1;
         }
@@ -535,7 +535,7 @@ pub fn inverted_dimond(n: i32) {
             j += 1;
         }
         let mut j = 1;
-        while j <= 2 * n - 2 * i {
+        while j <= 2 * n - 2 * i + 1 {
             print!("  ");
             j += 1;
         }
@@ -546,6 +546,64 @@ pub fn inverted_dimond(n: i32) {
         }
         println!();
         i += 1;
+    }
+}
+pub fn hollow_butterfly(n: i32) {
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= i {
+            if j == 1 || j == i {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= 2 * n - 2 * i {
+            print!("  ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            if j == 1 || j == i {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+    let mut i = n - 1;
+    while i >= 1 {
+        let mut j = 1;
+        while j <= i {
+            if j == i || j == 1 {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= 2 * n - 2 * i {
+            print!("  ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            if j == i || j == 1 {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+            j += 1;
+        }
+        println!();
+        i -= 1;
     }
 }
 pub fn pattern_printing() {
@@ -578,5 +636,6 @@ pub fn pattern_printing() {
     /* hollow_dimand(5); */
     /*     crown(5); */
     /*     butterfly(8); */
-    inverted_dimond(5);
+    /*   inverted_dimond(5); */
+    hollow_butterfly(5);
 }
