@@ -127,6 +127,51 @@ pub fn two_poiter_char_array() {
 
     println!()
 }
+//Find th maximum of the arrays
+pub fn maximum_number_of_the_array() {
+    let a = [1, 2, 3, 6, 4, 99];
+    let n = 6;
+
+    let mut b = [0; 6];
+    let mut i = 0;
+    while i < n {
+        b[i] = a[n - i - 1];
+        i += 1;
+    }
+    let mut ans = a[0];
+    let mut i = 1;
+    let mut location = 1;
+    while i < n {
+        if a[i] < ans {
+            ans = a[i];
+            location += 1;
+        }
+
+        i += 1;
+    }
+    println!("ans : {:?} , location :  {}", ans, location);
+}
+pub fn minmum_elemnt() {
+    let a = [11, 2, 3, 4, 5, 6];
+    let n = 6;
+    let mut b = [0; 6];
+    let mut i = 0;
+    while i <= n - 1 {
+        b[i] = a[n - i - 1];
+        i += 1
+    }
+    let mut ans = a[0];
+    let mut location = 1;
+    let mut i = 0;
+    while i < n {
+        if a[i] < ans {
+            ans = a[i];
+            location += 1;
+        }
+        i += 1;
+    }
+    println!("minimum : {} , location : {}", ans, location)
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -134,19 +179,7 @@ pub fn arrays() {
     // two_poiter_char_array();
     /*  some_of_array(); */
     /*     some_of_array_usieng_two_pointers(); */
-    let a = [1, 3, 4, 1];
-    let n = 4;
-    let mut b = [0; 4];
-    let mut i = 0;
-    while i < n {
-        b[i] = a[n - i - 1];
-        i += 1
-    }
-    let mut sum = 0;
-    let mut i = 0;
-    while i < n {
-        sum += a[i];
-        i += 1;
-    }
-    println!("{sum}")
+    /*  maximum_number_of_the_array(); */
+    minmum_elemnt();
 }
+
