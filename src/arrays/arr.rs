@@ -292,6 +292,80 @@ pub fn swap_alternate() {
     }
     println!("{:?}", a);
 }
+pub fn swap_revers() {
+    let mut a = [1, 4, 2, 3, 5, 9, 10];
+    let n = 7;
+    let mut i = 0;
+    let mut j = n - 1;
+    while i < j {
+        let temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+        i += 1;
+        j -= 1;
+    }
+    println!("{:?}", a)
+}
+pub fn missing_number() {
+    let a = [2, 1, 9, 1, 2, 3, 12, 3, 9];
+    let n = 9;
+    let mut i = 0;
+    let mut ans = 0;
+    let mut flag = false;
+
+    while i < n {
+        let target = a[i];
+        let mut count = 0;
+        let mut j = 0;
+        while j < n {
+            if target == a[j] {
+                count += 1;
+            }
+            j += 1;
+        }
+        if count == 1 {
+            ans = a[i];
+            flag = true;
+            break;
+        }
+
+        i += 1;
+    }
+    if flag {
+        println!("This is a single number : {:?}", ans);
+    } else {
+        println!("Number is not found")
+    }
+}
+pub fn missing_numbers() {
+    let a = [1, 1, 2, 2, 1];
+    let n = 5;
+    let mut flag = false;
+    let mut ans = 0;
+    let mut i = 0;
+    while i < n {
+        let target = a[i];
+        let mut count = 0;
+        let mut j = 0;
+        while j < n {
+            if a[j] == target {
+                count += 1
+            }
+            j += 1;
+        }
+        if count == 1 {
+            ans = a[i];
+            flag = true;
+            break;
+        }
+        i += 1;
+    }
+    if flag {
+        println!("{ans}")
+    } else {
+        println!("Not found")
+    }
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -306,5 +380,6 @@ pub fn arrays() {
     /*  sorted_array(); */
     /*     sort_zero_one(); */
     /* swapa(); */
-    swap_alternate();
+    /* swap_revers(); */
+    missing_numbers();
 }
