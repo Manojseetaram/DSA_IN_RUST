@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-use std::io;
+use std::{io, mem::swap};
 
 pub fn input_output() {
     let mut input = String::new();
@@ -270,6 +270,28 @@ pub fn sort_zero_one() {
     }
     println!("Total number of one : {count}")
 }
+pub fn swapa() {
+    let mut a = 4;
+    let mut b = 7;
+    // let temp = a;
+    // let a = b;
+    // let b = temp;
+    swap(&mut a, &mut b);
+    println!("a : {a} , b : {b}")
+}
+pub fn swap_alternate() {
+    let mut a = [7, 8, 1, 2, 3, 4, 7];
+    let n = 6;
+    let mut i = 1;
+
+    while i < n {
+        let temp = a[i];
+        a[i] = a[i - 1];
+        a[i - 1] = temp;
+        i += 2;
+    }
+    println!("{:?}", a);
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -282,6 +304,7 @@ pub fn arrays() {
     /* search_in_an_array(); */
     /*     count_occurences(); */
     /*  sorted_array(); */
-    sort_zero_one();
+    /*     sort_zero_one(); */
+    /* swapa(); */
+    swap_alternate();
 }
-
