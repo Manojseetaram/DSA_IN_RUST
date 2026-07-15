@@ -366,6 +366,35 @@ pub fn missing_numbers() {
         println!("Not found")
     }
 }
+pub fn duplicate_number() {
+    let a = [0, 7, 2, 5, 4, 7, 0, 1, 3, 6];
+    let n = 10;
+    let mut i = 0;
+    let mut ans = 0;
+    let mut flag = false;
+    while i < n {
+        let mut count = 0;
+        let mut j = 0;
+        let target = a[i];
+        while j < n {
+            if target == a[j] {
+                count += 1;
+            }
+            j += 1;
+        }
+        if count != 1 {
+            ans = a[i];
+            flag = true;
+            break;
+        }
+        i += 1;
+    }
+    if flag {
+        println!("Number is found : {ans }")
+    } else {
+        println!("Number is not found ")
+    }
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -381,5 +410,6 @@ pub fn arrays() {
     /*     sort_zero_one(); */
     /* swapa(); */
     /* swap_revers(); */
-    missing_numbers();
+    /*     missing_numbers(); */
+    duplicate_number();
 }
