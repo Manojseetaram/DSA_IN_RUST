@@ -411,5 +411,5 @@ pub fn arrays() {
     /* swapa(); */
     /* swap_revers(); */
     /*     missing_numbers(); */
-    duplicate_number();
+    /*     duplicate_number(); */
 }
