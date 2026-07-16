@@ -84,9 +84,75 @@ pub fn print_col_wise() {
         i += 1;
     }
 }
+pub fn bounday_element() {
+    let a = [[1, 2, 3, 1], [4, 5, 6, 2], [7, 8, 9, 3]];
+    let r = 3;
+    let c = 4;
+    let mut i = 0;
+    //First row r = 0
+    while i < c {
+        print!("{}  ", a[0][i]);
+        i += 1;
+    }
+    println!();
+    let mut i = 1;
+    while i < r {
+        print!("{}  ", a[i][c - 1]);
+        i += 1;
+    }
+    println!();
+    let mut i = (c - 2) as i32;
+    while i >= 0 {
+        print!("{}  ", a[r - 1][i as usize]);
+        i -= 1;
+    }
+    println!();
+    let mut i = (r - 2) as i32;
+    while i >= 1 {
+        print!("{}  ", a[i as usize][0]);
+        i -= 1;
+    }
+    println!();
+}
 pub fn two_d_array() {
     row_to_col();
     col_to_row();
     wave_print_row_wise();
     print_col_wise();
+    bounday_element();
+    bounday_elements();
+    bounday_element_row();
+}
+
+pub fn bounday_element_row() {
+    let a = [[1, 2, 3, 1], [4, 5, 6, 2], [7, 8, 9, 3]];
+    let r = 3;
+    let c = 4;
+    let mut i = 0;
+    //top to bottom   c = 0 ;
+    while i < r {
+        print!("{}  ", a[i][0]);
+
+        i += 1;
+    }
+    println!();
+    let mut i = 1;
+    //right to left  r = 1 ;
+    while i < c {
+        print!("{}  ", a[r - 1][i]);
+        i += 1;
+    }
+    println!();
+    let mut i = 1 as i32;
+    while i >= 0 {
+        print!("{}  ", a[i as usize][c - 1]);
+        i -= 1;
+    }
+    println!();
+    let mut i = (c - 2) as i32;
+    while i >= 1 {
+        print!("{}  ", a[0][i as usize]);
+        i -= 1;
+    }
+    println!()
 }
