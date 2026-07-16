@@ -151,6 +151,47 @@ pub fn find_minimum_number_one_d_row() {
         i += 1;
     }
 }
+pub fn row_with_max_1s() {
+    let a = [[0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 0, 0], [1, 1, 1]];
+    let r = 5;
+    let c = 3;
+
+    let mut i = 0;
+    let mut bestrow: isize = -1;
+    let mut maxcount = 0;
+    while i < r {
+        let mut count = 0;
+        let mut j = 0;
+
+        while j < c {
+            if a[i][j] == 1 {
+                count += 1;
+            }
+            j += 1
+        }
+        if count > maxcount {
+            maxcount = count;
+            bestrow = i as isize;
+        }
+        i += 1;
+    }
+    println!("The best row is : {bestrow}")
+}
+pub fn minimum() {
+    let a = [2, 2, 4, 1, 5, 9];
+    let n = 6;
+    let mut ans = a[0];
+    let mut location = 0;
+    let mut i = 0;
+    while i < n {
+        if a[i] < ans {
+            ans = a[i];
+            location += i;
+        }
+        i += 1;
+    }
+    println!("minimum : {} location : {} ", ans, location);
+}
 pub fn two_d_array() {
     row_to_col();
     col_to_row();
@@ -162,6 +203,8 @@ pub fn two_d_array() {
     find_maximum();
     find_minimum_number_one_d_row();
     find_minimum_number_colom_wise();
+    row_with_max_1s();
+    minimum();
 }
 pub fn find_minimum_number_colom_wise() {
     let a = [[1, 2, 3, 10], [4, 5, 6, 11], [7, 8, 9, 12]];
