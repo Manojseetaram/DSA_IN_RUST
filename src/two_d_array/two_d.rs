@@ -114,16 +114,74 @@ pub fn bounday_element() {
     }
     println!();
 }
+pub fn find_maximum() {
+    let a = [[1, 2, 3, 1], [4, 5, 6, 2], [7, 8, 9, 3]];
+    let r = 3;
+    let c = 4;
+    let mut i = 0;
+    let mut ans = a[0][0];
+    while i < r {
+        let mut j = 0;
+        while j < c {
+            if ans <= a[i][j] {
+                ans = a[i][j]
+            }
+            j += 1
+        }
+        i += 1
+    }
+    println!("{ans}");
+}
+pub fn find_minimum_number_one_d_row() {
+    let a = [[1, 2, 3, 1], [4, 5, 6, 2], [7, 8, 9, 3]];
+    let r = 3;
+    let c = 4;
+    let mut i = 0;
+
+    while i < r {
+        let mut ans = a[i][0];
+        let mut j = 0;
+        while j < c {
+            if a[i][j] <= ans {
+                ans = a[i][j]
+            }
+            j += 1;
+        }
+        println!("{:?}", ans);
+        i += 1;
+    }
+}
 pub fn two_d_array() {
     row_to_col();
     col_to_row();
     wave_print_row_wise();
     print_col_wise();
     bounday_element();
-    bounday_elements();
-    bounday_element_row();
-}
 
+    bounday_element_row();
+    find_maximum();
+    find_minimum_number_one_d_row();
+    find_minimum_number_colom_wise();
+}
+pub fn find_minimum_number_colom_wise() {
+    let a = [[1, 2, 3, 10], [4, 5, 6, 11], [7, 8, 9, 12]];
+    let r = 3;
+    let c = 4;
+    let mut i = 0;
+    while i < c {
+        let mut j = 0;
+        let mut ans = a[0][i];
+        while j < r {
+            if a[j][i] <= ans {
+                ans = a[j][i]
+            }
+            j += 1;
+        }
+
+        i += 1;
+        println!("{ans}");
+    }
+}
 pub fn bounday_element_row() {
     let a = [[1, 2, 3, 1], [4, 5, 6, 2], [7, 8, 9, 3]];
     let r = 3;
