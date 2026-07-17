@@ -203,6 +203,26 @@ pub fn lexicographical_orders() {
         println!("B")
     }
 }
+pub fn toggle_case() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n: Vec<char> = a.trim().chars().collect();
+    let mut i = 0;
+    while i < n.len() {
+        if n[i] >= 'A' && n[i] <= 'Z' {
+            let mut ch = n[i] as u8;
+            ch += 32;
+            n[i] = ch as char
+        } else if n[i] >= 'a' && n[i] <= 'z' {
+            let mut ch = n[i] as u8;
+            ch -= 32;
+            n[i] = ch as char
+        }
+        i += 1;
+    }
+    let ans: String = n.into_iter().collect();
+    println!("{ans}")
+}
 pub fn strings() {
     /*     check_same(); */
     // ascii();
@@ -215,5 +235,6 @@ pub fn strings() {
     /*     reverse(); */
     /*     trim_space(); */
     /*     remove_character(); */
-    lexicographical_orders();
+    /*     lexicographical_orders(); */
+    toggle_case();
 }
