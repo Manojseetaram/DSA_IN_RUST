@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-use std::io;
+use std::{char, io};
 pub fn check_same() {
     let ch1 = "aa";
     let ch2 = "aa";
@@ -71,12 +71,16 @@ pub fn replace_character() {
     io::stdin().read_line(&mut a).unwrap();
     let mut b1 = String::new();
     io::stdin().read_line(&mut b1).unwrap();
-    let mut iter = b1.split_whitespace();
+    let mut b2 = String::new();
+    io::stdin().read_line(&mut b2).unwrap();
+
+    /*   let mut iter = b1.split_whitespace(); */
     let mut n: Vec<char> = a.trim().chars().collect();
     let mut i = 0;
-    let old = iter.next().unwrap().chars().next().unwrap();
-    let new = iter.next().unwrap().chars().next().unwrap();
-
+    // let old = iter.next().unwrap().chars().next().unwrap();
+    // let new = iter.next().unwrap().chars().next().unwrap();
+    let old = b1.trim().chars().next().unwrap();
+    let new = b2.trim().chars().next().unwrap();
     while i < n.len() {
         if n[i] == old {
             n[i] = new
@@ -86,11 +90,48 @@ pub fn replace_character() {
     let ans: String = n.into_iter().collect();
     println!("{}", ans);
 }
+pub fn string_palindrome() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n: Vec<char> = a.trim().chars().collect();
+    let original = n.clone();
+    let mut i = 0;
+    let mut j = n.len() - 1;
+    while i < j {
+        let tmp = n[i];
+        n[i] = n[j];
+        n[j] = tmp;
+        i += 1;
+        j -= 1;
+    }
+    if original == n {
+        println!("yes")
+    } else {
+        println!("No")
+    }
+}
+pub fn count_words() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: Vec<char> = a.chars().collect();
+    let mut count = 0;
+    let mut i = 0;
+
+    while i < n.len() {
+        if n[i] == ' ' {
+            count += 1;
+        }
+        i += 1;
+    }
+    println!("{}", count + 1);
+}
 pub fn strings() {
     /*     check_same(); */
     // ascii();
     // charss();
     /*     brothers(); */
     /*     lexicographical_order(); */
-    replace_character();
+    /*     replace_character(); */
+    /*   string_palindrome(); */
+    count_words();
 }
