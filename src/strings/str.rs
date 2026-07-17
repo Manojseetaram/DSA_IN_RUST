@@ -65,10 +65,32 @@ pub fn lexicographical_order() {
         println!("B")
     }
 }
+
+pub fn replace_character() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut b1 = String::new();
+    io::stdin().read_line(&mut b1).unwrap();
+    let mut iter = b1.split_whitespace();
+    let mut n: Vec<char> = a.trim().chars().collect();
+    let mut i = 0;
+    let old = iter.next().unwrap().chars().next().unwrap();
+    let new = iter.next().unwrap().chars().next().unwrap();
+
+    while i < n.len() {
+        if n[i] == old {
+            n[i] = new
+        }
+        i += 1;
+    }
+    let ans: String = n.into_iter().collect();
+    println!("{}", ans);
+}
 pub fn strings() {
     /*     check_same(); */
     // ascii();
     // charss();
     /*     brothers(); */
-    lexicographical_order();
+    /*     lexicographical_order(); */
+    replace_character();
 }
