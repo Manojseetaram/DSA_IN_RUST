@@ -190,6 +190,19 @@ pub fn remove_character() {
     let ans1: String = ans.split_whitespace().collect();
     println!("{}", ans1);
 }
+pub fn lexicographical_orders() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut b = String::new();
+    io::stdin().read_line(&mut b).unwrap();
+    if a < b {
+        println!("A")
+    } else if a == b {
+        println!("Equal")
+    } else {
+        println!("B")
+    }
+}
 pub fn strings() {
     /*     check_same(); */
     // ascii();
@@ -201,5 +214,6 @@ pub fn strings() {
     /*  count_words(); */
     /*     reverse(); */
     /*     trim_space(); */
-    remove_character();
+    /*     remove_character(); */
+    lexicographical_orders();
 }
