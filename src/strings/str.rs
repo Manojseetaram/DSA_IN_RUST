@@ -125,6 +125,71 @@ pub fn count_words() {
     }
     println!("{}", count + 1);
 }
+
+pub fn palindrome() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n: Vec<char> = a.trim().chars().collect();
+    let collect = n.clone();
+
+    let mut i = 0;
+    let mut j = n.len() - 1;
+    while i < j {
+        let tmp = n[i];
+        n[i] = n[j];
+        n[j] = tmp;
+        i += 1;
+        j -= 1;
+    }
+    if collect == n {
+        println!("YES")
+    } else {
+        println!("No")
+    }
+}
+pub fn reverse() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n: Vec<char> = a.trim().chars().collect();
+    let mut i = 0;
+    let mut j = n.len() - 1;
+    while i < j {
+        let tmp = n[i];
+        n[i] = n[j];
+        n[j] = tmp;
+        i += 1;
+        j -= 1;
+    }
+    let ans: String = n.into_iter().collect();
+    println!("{}", ans);
+}
+
+pub fn trim_space() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let trim_space: String = a.trim().split_whitespace().collect();
+    println!("{}", trim_space);
+}
+pub fn remove_character() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut b1 = String::new();
+    io::stdin().read_line(&mut b1).unwrap();
+
+    let old = b1.trim().chars().next().unwrap();
+
+    let mut n: Vec<char> = a.trim().chars().collect();
+    let mut i = 0;
+    while i < n.len() {
+        if n[i] == old {
+            n[i] = ' '
+        }
+        i += 1;
+    }
+    let ans: String = n.into_iter().collect();
+    let ans1: String = ans.split_whitespace().collect();
+    println!("{}", ans1);
+}
 pub fn strings() {
     /*     check_same(); */
     // ascii();
@@ -133,5 +198,8 @@ pub fn strings() {
     /*     lexicographical_order(); */
     /*     replace_character(); */
     /*   string_palindrome(); */
-    count_words();
+    /*  count_words(); */
+    /*     reverse(); */
+    /*     trim_space(); */
+    remove_character();
 }
