@@ -193,18 +193,18 @@ pub fn minimum() {
     println!("minimum : {} location : {} ", ans, location);
 }
 pub fn two_d_array() {
-    row_to_col();
-    col_to_row();
-    wave_print_row_wise();
-    print_col_wise();
-    bounday_element();
-
-    bounday_element_row();
-    find_maximum();
-    find_minimum_number_one_d_row();
-    find_minimum_number_colom_wise();
-    row_with_max_1s();
-    minimum();
+    // row_to_col();
+    // col_to_row();
+    // wave_print_row_wise();
+    // print_col_wise();
+    // bounday_element();
+    //
+    // bounday_element_row();
+    // find_maximum();
+    // find_minimum_number_one_d_row();
+    // find_minimum_number_colom_wise();
+    // row_with_max_1s();
+    // minimum();
 }
 pub fn find_minimum_number_colom_wise() {
     let a = [[1, 2, 3, 10], [4, 5, 6, 11], [7, 8, 9, 12]];
