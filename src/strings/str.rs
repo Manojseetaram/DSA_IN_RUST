@@ -223,6 +223,62 @@ pub fn toggle_case() {
     let ans: String = n.into_iter().collect();
     println!("{ans}")
 }
+pub fn sisters() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut b = String::new();
+    io::stdin().read_line(&mut b).unwrap();
+    let c = a.trim().split_whitespace().last();
+    let d = b.trim().split_whitespace().last();
+    if c == d {
+        println!("YES")
+    } else {
+        println!("NO")
+    }
+}
+pub fn convert() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let ch = n as u8 as char;
+    println!("{}", ch)
+}
+pub fn convet_ass() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: char = a.trim().chars().next().unwrap();
+    let ch = n as char as u8;
+    println!("{}", ch);
+}
+pub fn strong_password() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: Vec<char> = a.trim().chars().collect();
+    let mut i = 0;
+
+    let mut has_upper = false;
+    let mut has_lower = false;
+    let mut has_digit = false;
+    let mut has_special = false;
+    while i < n.len() {
+        if n[i] >= 'A' && n[i] <= 'Z' {
+            has_upper = true
+        } else if n[i] >= 'a' && n[i] <= 'z' {
+            has_lower = true
+        } else if n[i] >= '0' && n[i] <= '9' {
+            has_digit = true
+        } else {
+            has_special = true
+        }
+        i += 1;
+    }
+    let lenth = n.len();
+    if lenth >= 10 && has_lower && has_upper && has_digit && has_special {
+        println!("Strong")
+    } else {
+        println!("Weak")
+    }
+}
 pub fn strings() {
     /*     check_same(); */
     // ascii();
@@ -236,5 +292,9 @@ pub fn strings() {
     /*     trim_space(); */
     /*     remove_character(); */
     /*     lexicographical_orders(); */
-    toggle_case();
+    /*     toggle_case(); */
+    /*     sisters(); */
+    /* convert()/* ; */  */
+    /*     convet_ass() */
+    strong_password();
 }
