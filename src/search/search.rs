@@ -67,7 +67,33 @@ pub fn words_binary_search() {
         println!("NO")
     }
 }
+pub fn linear_serch() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i32> = a.split_whitespace().map(|x| x.parse().unwrap()).collect();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let target: i32 = a.trim().parse().unwrap();
+    let mut flag = false;
+    let mut i = 0;
+    while i < n {
+        if arr[i] == target {
+            flag = true;
+            break;
+        }
+        i += 1;
+    }
+    if flag {
+        println!("YES")
+    } else {
+        println!("NO")
+    }
+}
 pub fn serching() {
     /*  binary_search(); */
     /*     words_binary_search(); */
+    linear_serch();
 }
