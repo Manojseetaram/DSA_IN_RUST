@@ -31,6 +31,43 @@ pub fn binary_search() {
         println!("NO")
     }
 }
+pub fn words_binary_search() {
+    let mut input = String::new();
+
+    io::stdin().read_line(&mut input).unwrap();
+    let n: usize = input.trim().parse().unwrap();
+
+    let mut names: Vec<String> = Vec::new();
+
+    for _ in 0..n {
+        input.clear();
+        io::stdin().read_line(&mut input).unwrap();
+        names.push(input.trim().to_string());
+    }
+    input.clear();
+    io::stdin().read_line(&mut input).unwrap();
+    let target = input.trim().to_string();
+    let mut l = 0;
+    let mut r = n - 1;
+    let mut flag = false;
+    while l <= r {
+        let mid = (l + r) / 2;
+        if names[mid] == target {
+            flag = true;
+            break;
+        } else if names[mid] > target {
+            r = mid - 1;
+        } else {
+            l = mid + 1;
+        }
+    }
+    if flag {
+        println!("YES")
+    } else {
+        println!("NO")
+    }
+}
 pub fn serching() {
-    binary_search();
+    /*  binary_search(); */
+    /*     words_binary_search(); */
 }
