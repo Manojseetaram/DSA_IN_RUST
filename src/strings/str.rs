@@ -254,17 +254,16 @@ pub fn strong_password() {
     let mut a = String::new();
     io::stdin().read_line(&mut a).unwrap();
     let n: Vec<char> = a.trim().chars().collect();
-    let mut i = 0;
-
-    let mut has_upper = false;
-    let mut has_lower = false;
+    let mut has_uppercase = false;
+    let mut has_lowercase = false;
     let mut has_digit = false;
     let mut has_special = false;
+    let mut i = 0;
     while i < n.len() {
         if n[i] >= 'A' && n[i] <= 'Z' {
-            has_upper = true
+            has_uppercase = true
         } else if n[i] >= 'a' && n[i] <= 'z' {
-            has_lower = true
+            has_lowercase = true
         } else if n[i] >= '0' && n[i] <= '9' {
             has_digit = true
         } else {
@@ -272,11 +271,42 @@ pub fn strong_password() {
         }
         i += 1;
     }
-    let lenth = n.len();
-    if lenth >= 10 && has_lower && has_upper && has_digit && has_special {
+    let lenght = n.len();
+    if lenght == 10 && has_uppercase && has_lowercase && has_special && has_digit {
         println!("Strong")
     } else {
         println!("Weak")
+    }
+}
+pub fn arraysss() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+
+    let n: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i32> = a.split_whitespace().map(|x| x.parse().unwrap()).collect();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let target: i32 = a.trim().parse().unwrap();
+    let mut flag = false;
+    let mut l = 0;
+    let mut r = n - 1;
+    while l <= r {
+        let mid = (l + r) / 2;
+        if arr[mid] == target {
+            flag = true;
+            break;
+        } else if arr[mid] > target {
+            r = mid - 1
+        } else {
+            l = mid + 1
+        }
+    }
+    if flag {
+        println!("YES")
+    } else {
+        println!("NO")
     }
 }
 pub fn strings() {
@@ -296,5 +326,6 @@ pub fn strings() {
     /*     sisters(); */
     /* convert()/* ; */  */
     /*     convet_ass() */
-    strong_password();
+    /*   strong_password(); */
+    /*     arraysss(); */
 }

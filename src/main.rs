@@ -1,6 +1,8 @@
 mod arrays;
 mod loops;
 mod pattern_printing;
+mod search;
+mod sorting;
 mod strings;
 mod two_d_array;
 fn main() {
@@ -10,4 +12,5 @@ fn main() {
     arrays::arr::arrays();
     two_d_array::two_d::two_d_array();
     strings::str::strings();
+    search::search::serching();
 }
