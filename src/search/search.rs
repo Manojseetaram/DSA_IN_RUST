@@ -26,9 +26,9 @@ pub fn binary_search() {
         }
     }
     if flag {
-        println!("YES")
+        println!("YES");
     } else {
-        println!("NO")
+        println!("NO");
     }
 }
 pub fn words_binary_search() {
@@ -93,7 +93,7 @@ pub fn linear_serch() {
     }
 }
 pub fn serching() {
-    /*  binary_search(); */
+    binary_search();
     /*     words_binary_search(); */
-    linear_serch();
+    /* linear_serch(); */
 }
