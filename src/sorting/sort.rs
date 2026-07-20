@@ -21,28 +21,22 @@ pub fn selection_sorting() {
         .collect();
 
     let mut i = 0;
-    while i < n - 1 {
+    while i < n {
+        let mut j = i + 1;
         let mut mn = arr[i];
         let mut loc = i;
-        let mut j = i + 1;
+
         while j < n {
             if arr[j] < mn {
                 mn = arr[j];
-                loc = j
+                loc = j;
             }
             j += 1;
         }
-
         arr.swap(i, loc);
-
-        print!("Pass {}: ", i + 1);
-        for x in &arr {
-            print!("{} ", x);
-        }
-
-        println!(", min_selected = {}", mn);
         i += 1;
     }
+    println!("{:?}", arr);
 }
 pub fn sorting() {
     selection_sorting();
