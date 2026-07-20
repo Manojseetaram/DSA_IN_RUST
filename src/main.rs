@@ -13,4 +13,5 @@ fn main() {
     two_d_array::two_d::two_d_array();
     strings::str::strings();
     search::search::serching();
+    sorting::sort::sorting();
 }
