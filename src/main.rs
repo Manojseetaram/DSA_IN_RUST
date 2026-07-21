@@ -4,6 +4,7 @@ mod pattern_printing;
 mod search;
 mod sorting;
 mod strings;
+mod timeandspace;
 mod two_d_array;
 fn main() {
     #![allow(dead_code)]

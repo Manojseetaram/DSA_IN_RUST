@@ -122,8 +122,78 @@ pub fn insertion_sort() {
         i += 1;
     }
 }
+pub fn selection_sort_and_insertion_sort() {
+    // let mut a = String::new();
+    // io::stdin().read_line(&mut a).unwrap();
+    // let t: usize = a.trim().parse().unwrap();
+    //
+    // for _ in 0..t {
+    //     a.clear();
+    //     io::stdin().read_line(&mut a).unwrap();
+    //     let n: usize = a.trim().parse().unwrap();
+    //     a.clear();
+    //     io::stdin().read_line(&mut a).unwrap();
+    //     let arr: Vec<i32> = a
+    //         .trim()
+    //         .split_whitespace()
+    //         .map(|x| x.parse().unwrap())
+    //         .collect();
+    // }
+}
+pub fn merge_sort() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut num = a.split_whitespace();
+    let n: usize = num.next().unwrap().parse().unwrap();
+    let m: usize = num.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr1: Vec<i32> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr2: Vec<i32> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut c = vec![0; n + m];
+    let mut i = 0;
+    let mut j = 0;
+    let mut k = 0;
+
+    while i < n && j < m {
+        if arr1[i] < arr2[j] {
+            c[k] = arr1[i];
+            i += 1;
+        } else {
+            c[k] = arr2[j];
+            j += 1;
+        }
+        k += 1
+    }
+    while i < n {
+        c[k] = arr1[i];
+        i += 1;
+        k += 1;
+    }
+    while j < m {
+        c[k] = arr2[j];
+        j += 1;
+        k += 1;
+    }
+    for x in &c {
+        print!("{} ", x);
+    }
+    println!();
+}
 pub fn sorting() {
     /*     selection_sorting(); */
     /*    bubble_sort(); */
-    insertion_sort();
+    /*     insertion_sort(); */
+    /*     selection_sort_and_insertion_sort(); */
+    /*     merge_sort(); */
 }
