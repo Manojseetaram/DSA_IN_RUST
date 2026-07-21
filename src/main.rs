@@ -15,4 +15,5 @@ fn main() {
     strings::str::strings();
     search::search::serching();
     sorting::sort::sorting();
+    timeandspace::time::timeandspace();
 }
