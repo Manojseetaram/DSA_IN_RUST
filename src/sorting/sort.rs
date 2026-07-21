@@ -80,8 +80,50 @@ pub fn bubble_sort() {
         i -= 1;
     }
 }
+pub fn insertion_sort() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
 
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut arr: Vec<i32> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut i = 1;
+    while i < n {
+        let temp = arr[i];
+        let mut j = i as isize - 1;
+        let mut shifts = 0;
+        while j >= 0 && arr[j as usize] > temp {
+            arr[(j + 1) as usize] = arr[j as usize];
+            shifts += 1;
+            j -= 1;
+        }
+        arr[(j + 1) as usize] = temp;
+        print!("Pass {}: ", i);
+        for x in &arr {
+            print!("{} ", x)
+        }
+        print!(",");
+        for s in 0..=i {
+            print!(" {}", arr[s])
+        }
+        print!(" |");
+        for s1 in i + 1..n {
+            print!(" {}", arr[s1])
+        }
+        print!(" ,");
+
+        print!(" shifts = {}", shifts);
+        println!();
+        i += 1;
+    }
+}
 pub fn sorting() {
     /*     selection_sorting(); */
-    bubble_sort();
+    /*    bubble_sort(); */
+    insertion_sort();
 }
