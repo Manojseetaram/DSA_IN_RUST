@@ -125,12 +125,34 @@ pub fn print_factors() {
 
     println!();
 }
+pub fn iamprime() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 2;
+    let mut flag = false;
+    while i * i <= n {
+        if n % i == 0 {
+            flag = true;
+        }
+        i += 1;
+    }
+    if n <= 1 {
+        flag = true;
+    }
 
+    if !flag {
+        println!("YES")
+    } else {
+        println!("NO")
+    }
+}
 pub fn timeandspace() {
     /*    useing_time_com_fact(); */
     /*  without_usieng_time_complexity(); */
     /*     natural_sum(); */
     /*     interval_sum(); */
     /*     counting_intervals() */
-    print_factors();
+    /*     print_factors(); */
+    iamprime();
 }
