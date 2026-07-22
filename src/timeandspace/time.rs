@@ -100,10 +100,37 @@ pub fn counting_intervals() {
         }
     }
 }
+pub fn print_factors() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    let mut ve = Vec::new();
+    while i * i <= n {
+        if n % i == 0 {
+            let j = n / i;
+
+            if i == j {
+                print!("{} ", i)
+            } else {
+                print!("{} ", i,);
+                ve.push(j)
+            }
+        }
+        i += 1;
+    }
+    for x in ve.iter().rev() {
+        print!("{} ", x)
+    }
+
+    println!();
+}
+
 pub fn timeandspace() {
     /*    useing_time_com_fact(); */
     /*  without_usieng_time_complexity(); */
     /*     natural_sum(); */
     /*     interval_sum(); */
-/*     counting_intervals() */
+    /*     counting_intervals() */
+    print_factors();
 }
