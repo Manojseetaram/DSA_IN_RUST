@@ -69,10 +69,41 @@ pub fn interval_sum() {
         println!("{}", sum)
     }
 }
-pub fn counting_intervals() {}
+pub fn counting_intervals() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let z: usize = a.trim().parse().unwrap();
+    for _ in 0..z {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let mut n = a.trim().split_whitespace();
+        let t: i64 = n.next().unwrap().trim().parse().unwrap();
+        let l: i64 = n.next().unwrap().trim().parse().unwrap();
+        let r: i64 = n.next().unwrap().trim().parse().unwrap();
+
+        let mut count = 0;
+        if t == 1 {
+            count = (r - l) - 1;
+        } else if t == 2 {
+            count = r - l;
+        } else if t == 3 {
+            count = r - l;
+        } else if t == 4 {
+            count = (r - l) + 1;
+        }
+        if l > r {
+            println!("{}", 0)
+        } else if count < 0 {
+            println!("{}", 0)
+        } else {
+            println!("{}", count)
+        }
+    }
+}
 pub fn timeandspace() {
     /*    useing_time_com_fact(); */
     /*  without_usieng_time_complexity(); */
     /*     natural_sum(); */
-    interval_sum();
+    /*     interval_sum(); */
+/*     counting_intervals() */
 }
