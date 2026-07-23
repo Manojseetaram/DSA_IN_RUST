@@ -1,6 +1,7 @@
 mod arrays;
 mod loops;
 mod pattern_printing;
+mod prefixsum;
 mod search;
 mod sorting;
 mod strings;
@@ -16,4 +17,5 @@ fn main() {
     search::search::serching();
     sorting::sort::sorting();
     timeandspace::time::timeandspace();
+    prefixsum::prefix::prefix_sum();
 }

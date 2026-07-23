@@ -154,5 +154,5 @@ pub fn timeandspace() {
     /*     interval_sum(); */
     /*     counting_intervals() */
     /*     print_factors(); */
-    iamprime();
+    /* iamprime(); */
 }
