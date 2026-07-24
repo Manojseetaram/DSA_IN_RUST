@@ -113,26 +113,44 @@ pub fn count_vowels() {
         println!("{}", count)
     }
 }
+pub fn range_sum_of_sqares() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let x: usize = n.next().unwrap().parse().unwrap();
+    let z: usize = n.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|s| s.parse::<i64>().unwrap().pow(2))
+        .collect();
+    let mut p = vec![0; x];
+    p[0] = arr[0];
+    for i in 1..x {
+        p[i] = p[i - 1] + arr[i];
+    }
+
+    for _ in 0..z {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let mut y = a.trim().split_whitespace();
+        let l: usize = y.next().unwrap().trim().parse().unwrap();
+        let r: usize = y.next().unwrap().trim().parse().unwrap();
+
+        let ans = if l == 1 {
+            p[r - 1]
+        } else {
+            p[r - 1] - p[l - 2]
+        };
+
+        println!("{ans}")
+    }
+}
 pub fn prefix_sum() {
     /*    range_sum_query(); */
     /*    even_sum_query(); */
-    count_vowels();
-
-    //
-    //  let mut p = vec![0; n];
-    // p[0] = str_line[0];
-    // for i in 1..n {
-    //     if !matches!(str_line[i], 'a' | 'e' | 'i' | 'o' | 'u') {
-    //         p[i] = p[i - 1] + str_line[i]
-    //     } else {
-    //         p[i] = p[i - 1]
-    //     }
-    // }
-    //  let ans = if l == 1 {
-    //     p[r - 1]
-    // } else {
-    //     p[r - 1] - p[l - 2]
-    // };
-    // println!("ans")
-    //
+    /*     count_vowels(); */
+    range_sum_of_sqares();
 }
