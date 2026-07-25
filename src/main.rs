@@ -5,6 +5,7 @@ mod prefixsum;
 mod search;
 mod sorting;
 mod strings;
+mod subarrays;
 mod timeandspace;
 mod two_d_array;
 fn main() {
@@ -18,4 +19,5 @@ fn main() {
     sorting::sort::sorting();
     timeandspace::time::timeandspace();
     prefixsum::prefix::prefix_sum();
+    subarrays::sub::subarray();
 }

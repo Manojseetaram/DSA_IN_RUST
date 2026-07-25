@@ -148,9 +148,49 @@ pub fn range_sum_of_sqares() {
         println!("{ans}")
     }
 }
+pub fn count_numbers_with_digit_sum_k() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut it = a.trim().split_whitespace();
+    let x: usize = it.next().unwrap().parse().unwrap();
+    let y: usize = it.next().unwrap().parse().unwrap();
+    let z: usize = it.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let _arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|s| s.parse().unwrap())
+        .collect();
+
+    let mut p = vec![0; x];
+
+    p[0] = if 0 != z { 1 } else { 0 };
+
+    for i in 1..x {
+        p[i] = p[i - 1];
+        if i != z {
+            p[i] += 1;
+        }
+    }
+    for _ in 0..y {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let mut n = a.trim().split_whitespace();
+        let l: usize = n.next().unwrap().parse().unwrap();
+        let r: usize = n.next().unwrap().parse().unwrap();
+        let ans = if l == 1 {
+            p[r - 1]
+        } else {
+            p[r - 1] - p[l - 2]
+        };
+        println!("{ans}")
+    }
+}
 pub fn prefix_sum() {
     /*    range_sum_query(); */
     /*    even_sum_query(); */
     /*     count_vowels(); */
-    range_sum_of_sqares();
+    /*  range_sum_of_sqares(); */
+    /*  count_numbers_with_digit_sum_k(); */
 }
