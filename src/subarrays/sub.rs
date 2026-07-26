@@ -57,11 +57,11 @@ pub fn sum_of_all_sub_arraty() {
             }
 
             ans += sum;
+            println!("{ans}");
             r += 1;
         }
         l += 1;
     }
-    println!("{ans}")
 }
 pub fn subarray() {
     /*     print_all_subarray(); */
