@@ -3,6 +3,7 @@ mod loops;
 mod pattern_printing;
 mod prefixsum;
 mod search;
+mod sets_and_maps;
 mod sorting;
 mod strings;
 mod subarrays;
@@ -20,4 +21,5 @@ fn main() {
     timeandspace::time::timeandspace();
     prefixsum::prefix::prefix_sum();
     subarrays::sub::subarray();
+    sets_and_maps::sets::sets_and_maps();
 }
