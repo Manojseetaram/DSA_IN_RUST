@@ -66,7 +66,7 @@ pub fn duplicate_useing_maps() {
     let mut a = String::new();
 
     io::stdin().read_line(&mut a).unwrap();
-    let n: usize = a.trim().parse().unwrap();
+    let _n: usize = a.trim().parse().unwrap();
 
     a.clear();
     io::stdin().read_line(&mut a).unwrap();
@@ -90,8 +90,30 @@ pub fn duplicate_useing_maps() {
     }
     println!("{:?}", map);
 }
+pub fn count_distinct() {
+    let mut a = String::new();
 
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+
+    let mut set: HashSet<i64> = HashSet::new();
+    let mut i = 0;
+    while i < n {
+        set.insert(arr[i]);
+        i += 1;
+    }
+    println!("{}", set.len());
+}
 pub fn sets_and_maps() {
     /*     duplicate_useing_sets(); */
-    duplicate_useing_maps();
+    /*  duplicate_useing_maps(); */
+    count_distinct();
 }
