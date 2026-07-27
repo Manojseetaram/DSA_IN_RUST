@@ -1,5 +1,8 @@
 #![allow(dead_code)]
-use std::{collections::HashSet, io};
+use std::{
+    collections::{HashMap, HashSet},
+    io,
+};
 pub fn duplicate_useing_array() {
     let mut a = String::new();
     io::stdin().read_line(&mut a).unwrap();
@@ -59,6 +62,36 @@ pub fn duplicate_useing_sets() {
     }
     println!("No duplicates");
 }
+pub fn duplicate_useing_maps() {
+    let mut a = String::new();
+
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+
+    let arr: Vec<i64> = a.split_whitespace().map(|x| x.parse().unwrap()).collect();
+
+    let mut map: HashMap<i64, i64> = HashMap::new();
+
+    // let mut i = 0;
+    // while i < n {
+    //     if map.contains_key(&arr[i]) {
+    //         *map.get_mut(&arr[i]).unwrap() += 1;
+    //     } else {
+    //         map.insert(arr[i], 1);
+    //     }
+    //
+    //     i += 1;
+    // }
+    for &x in &arr {
+        *map.entry(x).or_insert(0) += 1;
+    }
+    println!("{:?}", map);
+}
+
 pub fn sets_and_maps() {
-    duplicate_useing_sets();
+    /*     duplicate_useing_sets(); */
+    duplicate_useing_maps();
 }
