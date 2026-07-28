@@ -147,7 +147,8 @@ pub fn union_of_two_array() {
         i += 1;
     }
     println!("{}", set.len());
-    let ve: Vec<i64> = set.into_iter().collect();
+    let mut ve: Vec<i64> = set.into_iter().collect();
+    ve.sort();
     let s = ve
         .iter()
         .map(|x| x.to_string())
@@ -155,9 +156,56 @@ pub fn union_of_two_array() {
         .join(" ");
     println!("{}", s)
 }
+pub fn intersection_of_two_arrays() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n1: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr1: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let n2: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr2: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+
+    let mut set: HashSet<i64> = HashSet::new();
+    let mut i = 0;
+    let mut j = 0;
+    while i < n1 && j < n2 {
+        if arr1[i] == arr2[j] {
+            set.insert(arr1[i]);
+            i += 1;
+            j += 1;
+        } else if arr1[i] > arr2[j] {
+            j += 1;
+        } else {
+            i += 1;
+        }
+    }
+    println!("{}", set.len());
+    let mut ve: Vec<i64> = set.into_iter().collect();
+    ve.sort();
+    let s = ve
+        .iter()
+        .map(|x| x.to_string())
+        .collect::<Vec<_>>()
+        .join(" ");
+    println!("{}", s);
+}
 pub fn sets_and_maps() {
     /*     duplicate_useing_sets(); */
     /*  duplicate_useing_maps(); */
     /*     count_distinct(); */
-    union_of_two_array();
+    /*     union_of_two_array(); */
+    intersection_of_two_arrays();
 }
