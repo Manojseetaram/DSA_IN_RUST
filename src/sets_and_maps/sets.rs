@@ -307,6 +307,39 @@ pub fn two_sum() {
         println!("FALSE")
     }
 }
+pub fn two_sum_two() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let t: usize = n.next().unwrap().parse().unwrap();
+    let z: i64 = n.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut map: HashMap<i64, i64> = HashMap::new();
+    let mut i = 0;
+    let target = z;
+    let mut count = 0;
+
+    while i < t {
+        let req = target - arr[i];
+        if map.contains_key(&req) {
+            count += *map.get(&req).unwrap()
+        }
+        if map.contains_key(&arr[i]) {
+            *map.get_mut(&arr[i]).unwrap() += 1;
+        } else {
+            map.insert(arr[i], 1);
+        }
+
+        i += 1;
+    }
+    println!("{count}")
+}
 pub fn sets_and_maps() {
     /*     duplicate_useing_sets(); */
     /*  duplicate_useing_maps(); */
@@ -315,5 +348,6 @@ pub fn sets_and_maps() {
     /*  intersection_of_two_arrays(); */
     /*    intersection_of_two_arrays_ii(); */
     /*  count_distinct_queries_one(); */
-    two_sum();
+    /*     two_sum(); */
+    two_sum_two();
 }
