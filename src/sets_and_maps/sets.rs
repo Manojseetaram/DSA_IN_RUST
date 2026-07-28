@@ -244,14 +244,15 @@ pub fn intersection_of_two_arrays_ii() {
         }
         i += 1;
     }
+    ans.sort();
     println!("{}", ans.len());
-    let ve: Vec<i64> = ans.into_iter().collect();
-    let s = ve
+
+    let s = ans
         .iter()
         .map(|x| x.to_string())
         .collect::<Vec<_>>()
         .join(" ");
-    println!("{}", s)
+    println!("{}", s);
 }
 pub fn sets_and_maps() {
     /*     duplicate_useing_sets(); */
