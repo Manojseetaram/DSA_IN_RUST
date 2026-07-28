@@ -340,6 +340,34 @@ pub fn two_sum_two() {
     }
     println!("{count}")
 }
+pub fn two_sum_three() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let t: usize = n.next().unwrap().parse().unwrap();
+    let z: i64 = n.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut map: HashMap<i64, usize> = HashMap::new();
+    let mut i = 0;
+    let target = z;
+
+    while i < t {
+        let req = target - arr[i];
+        if let Some(&index) = map.get(&req) {
+            println!("{} {}", index + 1, i + 1);
+            break;
+        }
+        map.insert(arr[i], i);
+
+        i += 1;
+    }
+}
 pub fn sets_and_maps() {
     /*     duplicate_useing_sets(); */
     /*  duplicate_useing_maps(); */
@@ -349,5 +377,6 @@ pub fn sets_and_maps() {
     /*    intersection_of_two_arrays_ii(); */
     /*  count_distinct_queries_one(); */
     /*     two_sum(); */
-    two_sum_two();
+    /*     two_sum_two(); */
+    two_sum_three();
 }
