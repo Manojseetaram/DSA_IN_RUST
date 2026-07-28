@@ -223,25 +223,29 @@ pub fn intersection_of_two_arrays_ii() {
         .split_whitespace()
         .map(|x| x.parse().unwrap())
         .collect();
-    let mut set = HashMap::new();
-
+    let mut map: HashMap<i64, usize> = HashMap::new();
+    let mut ans: Vec<i64> = Vec::new();
     let mut i = 0;
     while i < n1 {
-        if set.contains_key(&arr1[i]) {
-            *set.get_mut(&arr1[i]).unwrap() += 1;
+        if map.contains_key(&arr1[i]) {
+            *map.get_mut(&arr1[i]).unwrap() += 1;
         } else {
+            map.insert(arr1[i], 1);
         }
+        i += 1;
     }
     let mut i = 0;
     while i < n2 {
-        if set.contains(&arr2[i]) {
-            ans.insert(arr2[i]);
+        if let Some(count) = map.get_mut(&arr2[i]) {
+            if *count > 0 {
+                ans.push(arr2[i]);
+                *count -= 1;
+            }
         }
         i += 1;
     }
     println!("{}", ans.len());
-    let mut ve: Vec<i64> = ans.into_iter().collect();
-    ve.sort();
+    let ve: Vec<i64> = ans.into_iter().collect();
     let s = ve
         .iter()
         .map(|x| x.to_string())
