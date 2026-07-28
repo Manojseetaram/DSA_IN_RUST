@@ -179,21 +179,21 @@ pub fn intersection_of_two_arrays() {
         .collect();
 
     let mut set: HashSet<i64> = HashSet::new();
+    let mut ans: HashSet<i64> = HashSet::new();
     let mut i = 0;
-    let mut j = 0;
-    while i < n1 && j < n2 {
-        if arr1[i] == arr2[j] {
-            set.insert(arr1[i]);
-            i += 1;
-            j += 1;
-        } else if arr1[i] > arr2[j] {
-            j += 1;
-        } else {
-            i += 1;
-        }
+    while i < n1 {
+        set.insert(arr1[i]);
+        i += 1;
     }
-    println!("{}", set.len());
-    let mut ve: Vec<i64> = set.into_iter().collect();
+    let mut i = 0;
+    while i < n2 {
+        if set.contains(&arr2[i]) {
+            ans.insert(arr2[i]);
+        }
+        i += 1;
+    }
+    println!("{}", ans.len());
+    let mut ve: Vec<i64> = ans.into_iter().collect();
     ve.sort();
     let s = ve
         .iter()
