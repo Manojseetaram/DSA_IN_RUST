@@ -202,10 +202,58 @@ pub fn intersection_of_two_arrays() {
         .join(" ");
     println!("{}", s);
 }
+pub fn intersection_of_two_arrays_ii() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n1: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr1: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let n2: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr2: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut set = HashMap::new();
+
+    let mut i = 0;
+    while i < n1 {
+        if set.contains_key(&arr1[i]) {
+            *set.get_mut(&arr1[i]).unwrap() += 1;
+        } else {
+        }
+    }
+    let mut i = 0;
+    while i < n2 {
+        if set.contains(&arr2[i]) {
+            ans.insert(arr2[i]);
+        }
+        i += 1;
+    }
+    println!("{}", ans.len());
+    let mut ve: Vec<i64> = ans.into_iter().collect();
+    ve.sort();
+    let s = ve
+        .iter()
+        .map(|x| x.to_string())
+        .collect::<Vec<_>>()
+        .join(" ");
+    println!("{}", s)
+}
 pub fn sets_and_maps() {
     /*     duplicate_useing_sets(); */
     /*  duplicate_useing_maps(); */
     /*     count_distinct(); */
     /*     union_of_two_array(); */
-    intersection_of_two_arrays();
+    /*  intersection_of_two_arrays(); */
+    intersection_of_two_arrays_ii();
 }
