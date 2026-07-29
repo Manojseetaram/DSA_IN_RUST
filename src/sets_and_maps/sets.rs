@@ -381,17 +381,34 @@ pub fn subarray_sum_equals_x() {
         .split_whitespace()
         .map(|x| x.parse().unwrap())
         .collect();
+    // let mut i = 0;
+    // let mut flag = false;
+    // while i < t {
+    //     let target = z;
+    //     let mut j = 0;
+    //     while j < t {
+    //         if arr[i] == target {
+    //             flag = true;
+    //         }
+    //         j += 1;
+    //     }
+    //     i += 1;
+    // }
+    // if flag {
+    //     println!("YES")
+    // } else {
+    //     println!("NO")
+    // }
+    let mut set: HashSet<i64> = HashSet::new();
     let mut i = 0;
+    let target = z;
     let mut flag = false;
     while i < t {
-        let target = z;
-        let mut j = 0;
-        while j < t {
-            if arr[i] == target {
-                flag = true;
-            }
-            j += 1;
-        }
+        let r = arr[i] - target;
+        if set.contains(&r) {
+            flag = true;
+        };
+        set.insert(arr[i]);
         i += 1;
     }
     if flag {
@@ -399,6 +416,41 @@ pub fn subarray_sum_equals_x() {
     } else {
         println!("NO")
     }
+}
+pub fn count_subarrays_with_sum_x() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let t: usize = n.next().unwrap().parse().unwrap();
+    let z: i64 = n.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+
+    let mut map: HashMap<i64, i64> = HashMap::new();
+    map.insert(0, 1);
+
+    let mut prefix_sum = 0;
+    let mut count = 0;
+    let mut i = 0;
+    while i < t {
+        prefix_sum += arr[i];
+        let need = prefix_sum - z;
+        if map.contains_key(&need) {
+            count += *map.get(&need).unwrap();
+        }
+        if map.contains_key(&prefix_sum) {
+            *map.get_mut(&prefix_sum).unwrap() += 1;
+        } else {
+            map.insert(prefix_sum, 1);
+        }
+        i += 1;
+    }
+    println!("{}", count);
 }
 pub fn sets_and_maps() {
     /*     duplicate_useing_sets(); */
@@ -411,5 +463,6 @@ pub fn sets_and_maps() {
     /*     two_sum(); */
     /*     two_sum_two(); */
     /*     two_sum_three(); */
-    subarray_sum_equals_x();
+    /*     subarray_sum_equals_x(); */
+    count_subarrays_with_sum_x();
 }
