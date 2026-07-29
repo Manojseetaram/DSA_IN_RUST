@@ -368,6 +368,38 @@ pub fn two_sum_three() {
         i += 1;
     }
 }
+pub fn subarray_sum_equals_x() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let t: usize = n.next().unwrap().parse().unwrap();
+    let z: i64 = n.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut i = 0;
+    let mut flag = false;
+    while i < t {
+        let target = z;
+        let mut j = 0;
+        while j < t {
+            if arr[i] == target {
+                flag = true;
+            }
+            j += 1;
+        }
+        i += 1;
+    }
+    if flag {
+        println!("YES")
+    } else {
+        println!("NO")
+    }
+}
 pub fn sets_and_maps() {
     /*     duplicate_useing_sets(); */
     /*  duplicate_useing_maps(); */
@@ -378,5 +410,6 @@ pub fn sets_and_maps() {
     /*  count_distinct_queries_one(); */
     /*     two_sum(); */
     /*     two_sum_two(); */
-    two_sum_three();
+    /*     two_sum_three(); */
+    subarray_sum_equals_x();
 }
