@@ -6,8 +6,9 @@ pub fn two_pointers() {
     //
     let mut a = String::new();
     io::stdin().read_line(&mut a).unwrap();
-    let n: usize = a.trim().parse().unwrap();
-
+    let mut n = a.trim().split_whitespace();
+    let t: usize = n.next().unwrap().parse().unwrap();
+    let z: usize = n.next().unwrap().parse().unwrap();
     a.clear();
     io::stdin().read_line(&mut a).unwrap();
     let arr: Vec<i64> = a
@@ -16,12 +17,13 @@ pub fn two_pointers() {
         .map(|x| x.parse().unwrap())
         .collect();
     let mut l = 0;
-    while l < n {
+    while l < t {
         let mut r = l;
         let mut sum = 0;
-        while r < n {
+        while r < t {
             sum += arr[r];
             r += 1;
+            if t == z {}
             print!("{} ", sum);
         }
         println!();
