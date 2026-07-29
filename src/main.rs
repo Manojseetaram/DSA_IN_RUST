@@ -9,6 +9,7 @@ mod strings;
 mod subarrays;
 mod timeandspace;
 mod two_d_array;
+mod two_pointers;
 fn main() {
     #![allow(dead_code)]
     loops::loop_fn::loops_function();
@@ -22,4 +23,5 @@ fn main() {
     prefixsum::prefix::prefix_sum();
     subarrays::sub::subarray();
     sets_and_maps::sets::sets_and_maps();
+    two_pointers::two::two_pointers();
 }

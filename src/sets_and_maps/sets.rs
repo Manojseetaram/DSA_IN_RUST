@@ -431,26 +431,45 @@ pub fn count_subarrays_with_sum_x() {
         .map(|x| x.parse().unwrap())
         .collect();
 
+    // let mut map: HashMap<i64, i64> = HashMap::new();
+    // map.insert(0, 1);
+    //
+    // let mut prefix_sum = 0;
+    //
+    // let mut i = 0;
+    // while i < t {
+    //     prefix_sum += arr[i];
+    //     let need = prefix_sum - z;
+    //     if let Some(&index) = map.get(&need) {
+    //         println!("{} {}", index + 1, i + 1);
+    //         break;
+    //     }
+    //
+    //     map.insert(prefix_sum, i);
+    //
+    //     i += 1;
+    // }
+    // println!();
     let mut map: HashMap<i64, i64> = HashMap::new();
-    map.insert(0, 1);
+    map.insert(0, -1);
 
     let mut prefix_sum = 0;
-    let mut count = 0;
     let mut i = 0;
+
     while i < t {
         prefix_sum += arr[i];
+
         let need = prefix_sum - z;
-        if map.contains_key(&need) {
-            count += *map.get(&need).unwrap();
+
+        if let Some(&index) = map.get(&need) {
+            println!("{} {}", index + 2, i + 1);
+            break;
         }
-        if map.contains_key(&prefix_sum) {
-            *map.get_mut(&prefix_sum).unwrap() += 1;
-        } else {
-            map.insert(prefix_sum, 1);
-        }
+
+        map.insert(prefix_sum, i as i64);
+
         i += 1;
     }
-    println!("{}", count);
 }
 pub fn sets_and_maps() {
     /*     duplicate_useing_sets(); */
@@ -464,5 +483,5 @@ pub fn sets_and_maps() {
     /*     two_sum_two(); */
     /*     two_sum_three(); */
     /*     subarray_sum_equals_x(); */
-    count_subarrays_with_sum_x();
+    /*    count_subarrays_with_sum_x(); */
 }
