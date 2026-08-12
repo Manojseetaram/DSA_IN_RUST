@@ -122,10 +122,41 @@ pub fn max_subarray_size_k_with_time() {
     }
     println!("{}", ans)
 }
-
+pub fn count_vowels() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let n1: usize = n.next().unwrap().parse().unwrap();
+    let k: usize = n.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<char> = a.trim().chars().collect();
+    let mut count = 0;
+    let mut i = 0;
+    while i < k {
+        if "aeiouAEIOU".contains(arr[i]) {
+            count += 1;
+        }
+        i += 1;
+    }
+    print!("{} ", count);
+    let mut i = k;
+    while i < n1 {
+        if "aeiouAEIOU".contains(arr[i]) {
+            count += 1;
+        }
+        if "aeiouAEIOU".contains(arr[i - k]) {
+            count -= 1;
+        }
+        print!("{} ", count);
+        i += 1;
+    }
+    println!();
+}
 pub fn two_pointers() {
     /*     carry_forword_method(); */
     /*     sum(); */
     /*     max_subarray_size_k(); */
-    max_subarray_size_k_with_time();
+    /*     max_subarray_size_k_with_time(); */
+    count_vowels();
 }
