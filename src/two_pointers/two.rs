@@ -153,10 +153,88 @@ pub fn count_vowels() {
     }
     println!();
 }
+// pub fn count_number_of_distinct_integers() {
+//     let mut a = String::new();
+//     io::stdin().read_line(&mut a).unwrap();
+//     let mut n = a.trim().split_whitespace();
+//     let n1: usize = n.next().unwrap().parse().unwrap();
+//     let k: usize = n.next().unwrap().parse().unwrap();
+//     a.clear();
+//     io::stdin().read_line(&mut a).unwrap();
+//     let arr: Vec<i64> = a
+//         .trim()
+//         .split_whitespace()
+//         .map(|x| x.parse().unwrap())
+//         .collect();
+// }
+pub fn logest_subarray_with_sum_k() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let n1: usize = n.next().unwrap().parse().unwrap();
+    let k: i64 = n.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut l = 0;
+    let mut max_lenth = 0;
+
+    while l < n1 {
+        let mut sum = 0;
+        let mut r = l;
+        while r >= n1 {
+            sum += arr[r];
+            if sum < k {
+                max_lenth = max_lenth.max(r - l + 1);
+            }
+
+            r += 1;
+        }
+        l += 1;
+    }
+    println!("{}", max_lenth)
+}
+pub fn logest_subarray_with_sum_k_tcl() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let n1: usize = n.next().unwrap().parse().unwrap();
+    let k: i64 = n.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut l = 0;
+    let mut r = 0;
+    let mut sum = 0;
+    let mut max_lenth = 0;
+    while r < n1 {
+        sum += arr[r];
+        while sum >= k {
+            sum -= arr[l];
+            l += 1;
+        }
+        max_lenth = max_lenth.max(r - l + 1);
+
+        r += 1;
+    }
+    println!("{}", max_lenth);
+}
+
 pub fn two_pointers() {
     /*     carry_forword_method(); */
     /*     sum(); */
     /*     max_subarray_size_k(); */
     /*     max_subarray_size_k_with_time(); */
-    count_vowels();
+    /*     count_vowels(); */
+    /*     count_number_of_distinct_integers(); */
+    /*     logest_subarray_with_sum_k(); */
+    logest_subarray_with_sum_k_tcl();
 }
