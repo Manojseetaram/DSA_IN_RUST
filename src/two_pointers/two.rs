@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use std::io;
+use std::{collections::HashMap, io};
 
 pub fn carry_forword_method() {
     //Useing carry Forward Technique
@@ -228,6 +228,32 @@ pub fn logest_subarray_with_sum_k_tcl() {
     println!("{}", max_lenth);
 }
 
+pub fn longest_substring_without_repeating_characters() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<char> = a.trim().chars().collect();
+    let mut map: HashMap<char, usize> = HashMap::new();
+    let mut l = 0;
+    let mut r = 0;
+    let mut max_lenth = 0;
+    while r < n {
+        let ch = arr[r];
+        if let Some(&previus_index) = map.get(&ch) {
+            if previus_index >= l {
+                l = previus_index + 1;
+            }
+        }
+        map.insert(ch, r);
+        max_lenth = max_lenth.max(r - l + 1);
+
+        r += 1;
+    }
+    println!("{}", max_lenth);
+}
+
 pub fn two_pointers() {
     /*     carry_forword_method(); */
     /*     sum(); */
@@ -236,5 +262,6 @@ pub fn two_pointers() {
     /*     count_vowels(); */
     /*     count_number_of_distinct_integers(); */
     /*     logest_subarray_with_sum_k(); */
-    logest_subarray_with_sum_k_tcl();
+    /*     logest_subarray_with_sum_k_tcl(); */
+    longest_substring_without_repeating_characters();
 }
