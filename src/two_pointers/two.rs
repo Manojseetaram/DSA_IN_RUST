@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
 use std::io;
+
 pub fn carry_forword_method() {
     //Useing carry Forward Technique
     //
@@ -92,8 +93,39 @@ pub fn max_subarray_size_k() {
     }
     println!("{}", ans);
 }
+pub fn max_subarray_size_k_with_time() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let n1: usize = n.next().unwrap().parse().unwrap();
+    let k: usize = n.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut sum = 0;
+    let mut l = 0;
+    while l < k {
+        sum += arr[l];
+        l += 1;
+    }
+    let mut ans = sum;
+    let mut i = k;
+    while i < n1 {
+        sum += arr[i];
+        sum -= arr[i - k];
+        ans = ans.max(sum);
+        i += 1;
+    }
+    println!("{}", ans)
+}
+
 pub fn two_pointers() {
     /*     carry_forword_method(); */
     /*     sum(); */
-    max_subarray_size_k();
+    /*     max_subarray_size_k(); */
+    max_subarray_size_k_with_time();
 }
