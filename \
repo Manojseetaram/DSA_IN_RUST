@@ -256,32 +256,8 @@ pub fn longest_substring_without_repeating_characters() {
 pub fn smallest_subarray_with_sum_greaterthan_k() {
     let mut a = String::new();
     io::stdin().read_line(&mut a).unwrap();
-    let mut n = a.trim().split_whitespace();
-    let n1: usize = n.next().unwrap().parse().unwrap();
-    let k: i64 = n.next().unwrap().parse().unwrap();
-    a.clear();
-    io::stdin().read_line(&mut a).unwrap();
-    let arr: Vec<i64> = a
-        .trim()
-        .split_whitespace()
-        .map(|x| x.parse().unwrap())
-        .collect();
-    let mut ans = n1 + 1;
-    let mut l = 0;
-    let mut r = 0;
-    let mut sum = 0;
-
-    while r < n1 {
-        sum += arr[r];
-        while sum > k {
-            let length = r - l + 1;
-            ans = ans.min(length);
-            sum -= arr[l];
-            l += 1;
-        }
-        r += 1;
-    }
-    println!("{}", ans)
+    let n = a.trim().split_whitespace();
+    let n1 = n.
 }
 pub fn two_pointers() {
     /*     carry_forword_method(); */
