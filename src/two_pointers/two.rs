@@ -293,5 +293,5 @@ pub fn two_pointers() {
     /*     logest_subarray_with_sum_k(); */
     /*     logest_subarray_with_sum_k_tcl(); */
     /*     longest_substring_without_repeating_characters(); */
-    smallest_subarray_with_sum_greaterthan_k();
+    /*     smallest_subarray_with_sum_greaterthan_k(); */
 }

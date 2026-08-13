@@ -5,6 +5,8 @@
 
 //print 1 to 100
 #![allow(dead_code)]
+
+use std::io;
 pub fn print_one_to_hundred() {
     //for loop
     for i in 1..=5 {
@@ -300,6 +302,27 @@ pub fn factorial_number(n: i32) {
     }
     println!("{fact}");
 }
+pub fn print_one_to_n() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        println!("{}", i);
+        i += 1;
+    }
+}
+pub fn n_to_one() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = n;
+    while i >= 1 {
+        print!("{} ", i);
+        i -= 1;
+    }
+    println!()
+}
 pub fn loops_function() {
     // print_one_to_hundred();
     // print_one_to_n_numbers(10);
@@ -313,6 +336,9 @@ pub fn loops_function() {
     // println!("{}", rev_and_store_in_var(321));
     // println!("{}", palindrome(121));
     // println!("{}", palindrome_for_loop(212));
+
     // println!("{}", palindrome_n(121))
     /*     factorial_number(5); */
+    /*     print_one_to_n(); */
+    n_to_one();
 }
