@@ -323,6 +323,43 @@ pub fn n_to_one() {
     }
     println!()
 }
+pub fn print_all_even_numbers() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        if i % 2 == 0 {
+            print!("{} ", i);
+        }
+        i += 1;
+    }
+    println!()
+}
+pub fn print_l_to_r() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n = a.trim().split_whitespace();
+    let l: usize = n.next().unwrap().trim().parse().unwrap();
+    let r: usize = n.next().unwrap().trim().parse().unwrap();
+    let mut i = l;
+    while i <= r {
+        print!("{} ", i);
+        i += 1;
+    }
+    println!();
+}
+pub fn print_all_uppercase_alphabates() {
+    let mut i = 'A' as u8;
+    let j = 'Z' as u8;
+    while i <= j {
+        print!("{} ", i as char);
+
+        i += 1;
+    }
+    println!();
+}
+
 pub fn loops_function() {
     // print_one_to_hundred();
     // print_one_to_n_numbers(10);
@@ -340,5 +377,9 @@ pub fn loops_function() {
     // println!("{}", palindrome_n(121))
     /*     factorial_number(5); */
     /*     print_one_to_n(); */
-    n_to_one();
+    /*     n_to_one(); */
+    /*     print_all_even_numbers(); */
+    print_l_to_r();
+
+    /*     print_all_uppercase_alphabates(); */
 }
