@@ -423,6 +423,18 @@ pub fn sum_of_first_n_natural_numbers() {
     }
     println!("{sum}")
 }
+pub fn factorials() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    let mut fact = 1;
+    while i <= n {
+        fact *= i;
+        i += 1;
+    }
+    println!("{fact}")
+}
 pub fn loops_function() {
     // print_one_to_hundred();
     // print_one_to_n_numbers(10);
@@ -446,5 +458,6 @@ pub fn loops_function() {
 
     /*     print_all_uppercase_alphabates(); */
     /* cout_numbers(); */
-    sum_of_first_n_natural_numbers();
+    /*     sum_of_first_n_natural_numbers(); */
+    factorials();
 }
