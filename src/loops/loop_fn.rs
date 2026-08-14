@@ -435,6 +435,20 @@ pub fn factorials() {
     }
     println!("{fact}")
 }
+pub fn x_off_n() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut k = a.trim().split_whitespace();
+    let n: usize = k.next().unwrap().trim().parse().unwrap();
+    let x: usize = k.next().unwrap().trim().parse().unwrap();
+    let mut i = 1;
+    let mut fact = 1;
+    while i <= n {
+        fact *= x;
+        i += 1;
+    }
+    println!("{fact}");
+}
 pub fn loops_function() {
     // print_one_to_hundred();
     // print_one_to_n_numbers(10);
@@ -459,5 +473,6 @@ pub fn loops_function() {
     /*     print_all_uppercase_alphabates(); */
     /* cout_numbers(); */
     /*     sum_of_first_n_natural_numbers(); */
-    factorials();
+    /*     factorials(); */
+    x_off_n();
 }
