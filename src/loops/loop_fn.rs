@@ -359,7 +359,70 @@ pub fn print_all_uppercase_alphabates() {
     }
     println!();
 }
+pub fn print_table_of_n() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= 10 {
+        println!("{n} * {i} = {}", n * i);
+        i += 1;
+    }
+}
+pub fn cout_numbers() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|c| c.parse().unwrap())
+        .collect();
+    let mut i = 0;
+    let mut negative = 0;
+    let mut positive = 0;
+    let mut even = 0;
+    let mut odd = 0;
 
+    while i < n {
+        if arr[i] > 0 {
+            positive += 1;
+        }
+
+        if arr[i] < 0 {
+            negative += 1;
+        }
+
+        if arr[i] % 2 == 0 {
+            even += 1;
+        }
+        if arr[i] % 2 != 0 {
+            odd += 1;
+        }
+
+        i += 1;
+    }
+    println!("{positive}");
+    println!("{negative}");
+
+    println!("{even}");
+    println!("{odd}");
+}
+pub fn sum_of_first_n_natural_numbers() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    let mut sum = 0;
+
+    while i <= n {
+        sum += i;
+        i += 1;
+    }
+    println!("{sum}")
+}
 pub fn loops_function() {
     // print_one_to_hundred();
     // print_one_to_n_numbers(10);
@@ -373,13 +436,15 @@ pub fn loops_function() {
     // println!("{}", rev_and_store_in_var(321));
     // println!("{}", palindrome(121));
     // println!("{}", palindrome_for_loop(212));
-
+    /* int_table_of_n(); */
     // println!("{}", palindrome_n(121))
     /*     factorial_number(5); */
     /*     print_one_to_n(); */
     /*     n_to_one(); */
     /*     print_all_even_numbers(); */
-    print_l_to_r();
+    /*     print_l_to_r(); */
 
     /*     print_all_uppercase_alphabates(); */
+    /* cout_numbers(); */
+    sum_of_first_n_natural_numbers();
 }
