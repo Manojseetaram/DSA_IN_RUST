@@ -439,15 +439,71 @@ pub fn x_off_n() {
     let mut a = String::new();
     io::stdin().read_line(&mut a).unwrap();
     let mut k = a.trim().split_whitespace();
-    let n: usize = k.next().unwrap().trim().parse().unwrap();
-    let x: usize = k.next().unwrap().trim().parse().unwrap();
+
+    let n: i64 = k.next().unwrap().trim().parse().unwrap();
+
+    let x: i64 = k.next().unwrap().trim().parse().unwrap();
+
     let mut i = 1;
     let mut fact = 1;
-    while i <= n {
-        fact *= x;
+
+    while i <= x {
+        fact *= n;
+
         i += 1;
     }
     println!("{fact}");
+}
+pub fn print_number_revrse() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n: usize = a.trim().parse().unwrap();
+
+    while n != 0 {
+        print!("{}", n % 10);
+        n = n / 10;
+    }
+    println!();
+}
+pub fn sum_of_digits() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n: usize = a.trim().parse().unwrap();
+
+    let mut sum = 0;
+
+    while n != 0 {
+        sum += n % 10;
+        n = n / 10;
+    }
+    println!("{}", sum)
+}
+pub fn revrse_number_stored_in_varible() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n: usize = a.trim().parse().unwrap();
+    let mut ans = 0;
+    while n != 0 {
+        ans = ans * 10 + n % 10;
+        n = n / 10
+    }
+    println!("{ans}")
+}
+pub fn palindromes() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut n: usize = a.trim().parse().unwrap();
+    let mut ans = 0;
+    let p = n;
+    while n != 0 {
+        ans = ans * 10 + n % 10;
+        n = n / 10;
+    }
+    if ans == p {
+        println!("YES")
+    } else {
+        println!("NO")
+    }
 }
 pub fn loops_function() {
     // print_one_to_hundred();
@@ -474,5 +530,8 @@ pub fn loops_function() {
     /* cout_numbers(); */
     /*     sum_of_first_n_natural_numbers(); */
     /*     factorials(); */
-    x_off_n();
+    /*     x_off_n(); */
+    print_number_revrse();
+    /*    sum_of_digits(); */
+    /*  palindromes(); */
 }
