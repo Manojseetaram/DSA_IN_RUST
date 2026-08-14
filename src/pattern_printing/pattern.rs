@@ -690,6 +690,49 @@ pub fn hollow_rectangle() {
         i += 1;
     }
 }
+pub fn number_tringle() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= i {
+            print!("{i}");
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
+pub fn binary_pyramids() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        let mut start: i32;
+        if i % 2 == 1 {
+            start = 0
+        } else {
+            start = 1
+        }
+        while j <= i {
+            print!("{start}");
+            //alternat
+            if start == 0 {
+                start = 1
+            } else {
+                start = 0
+            }
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
+
 pub fn pattern_printing() {
     // one_to_n_number(5);
     // one_to_n_number_star(6);
@@ -726,5 +769,7 @@ pub fn pattern_printing() {
     /*     m_stars(); */
     /*     square(); */
     /*  pyramid(); */
-    hollow_rectangle();
+    /*    hollow_rectangle(); */
+    /*   number_tringle(); */
+    binary_pyramids();
 }
