@@ -1,4 +1,6 @@
 #![allow(dead_code)]
+
+use std::io;
 pub fn one_to_n_number(n: u32) {
     for i in 1..=n {
         println!("{i:?}");
@@ -606,6 +608,88 @@ pub fn hollow_butterfly(n: i32) {
         i -= 1;
     }
 }
+pub fn two_stars(n: usize) {
+    let mut i = 1;
+    while i <= n {
+        println!("**");
+        i += 1;
+    }
+}
+
+pub fn m_stars() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut k = a.trim().split_whitespace();
+    let n: usize = k.next().unwrap().trim().parse().unwrap();
+    let m: usize = k.next().unwrap().trim().parse().unwrap();
+    let mut i = 1;
+
+    while i <= n {
+        let mut j = 1;
+        while j <= m {
+            print!("*");
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
+pub fn square() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= n {
+            print!("*");
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
+pub fn hollow_trangle() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= n {
+            if i == 1 || i == n || j == 1 || j == n {
+                print!("*")
+            } else {
+                print!(" ")
+            }
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
+pub fn hollow_rectangle() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut k = a.trim().split_whitespace();
+    let n: usize = k.next().unwrap().trim().parse().unwrap();
+    let m: usize = k.next().unwrap().trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= m {
+            if i == 1 || i == n || j == 1 || j == m {
+                print!("*");
+            } else {
+                print!(" ")
+            }
+
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
 pub fn pattern_printing() {
     // one_to_n_number(5);
     // one_to_n_number_star(6);
@@ -638,4 +722,9 @@ pub fn pattern_printing() {
     /*     butterfly(8); */
     /*   inverted_dimond(5); */
     /*   hollow_butterfly(5); */
+    /* two_stars(5); */
+    /*     m_stars(); */
+    /*     square(); */
+    /*  pyramid(); */
+    hollow_rectangle();
 }

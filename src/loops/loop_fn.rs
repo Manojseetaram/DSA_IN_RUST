@@ -531,7 +531,7 @@ pub fn loops_function() {
     /*     sum_of_first_n_natural_numbers(); */
     /*     factorials(); */
     /*     x_off_n(); */
-    print_number_revrse();
+
     /*    sum_of_digits(); */
     /*  palindromes(); */
 }
