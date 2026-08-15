@@ -732,6 +732,136 @@ pub fn binary_pyramids() {
         i += 1;
     }
 }
+pub fn verticle_tringle() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+
+        while j <= i {
+            print!("* ");
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+    let mut i = n - 1;
+    while i >= 1 {
+        let mut j = 1;
+
+        while j <= i {
+            print!("* ");
+            j += 1;
+        }
+        println!();
+        i -= 1;
+    }
+}
+pub fn hollow_verticle_tringle() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= i {
+            if j == 1 || j == i {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+
+            j += 1
+        }
+        println!();
+        i += 1;
+    }
+    let mut i = n - 1;
+    while i >= 1 {
+        let mut j = 1;
+        while j <= i {
+            if j == 1 || j == i {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+
+            j += 1;
+        }
+        println!();
+        i -= 1;
+    }
+}
+pub fn right_aligned_pyramid() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= n - i {
+            print!("  ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            print!("* ");
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
+pub fn triagle() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= n - i {
+            print!(" ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            if j == i {
+                print!("*");
+            } else {
+                print!("* ")
+            }
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
+pub fn hollow_triagle() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= n - i {
+            print!(" ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            if i == 1 || j == 1 || i == n || j == i {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
 
 pub fn pattern_printing() {
     // one_to_n_number(5);
@@ -771,5 +901,11 @@ pub fn pattern_printing() {
     /*  pyramid(); */
     /*    hollow_rectangle(); */
     /*   number_tringle(); */
-    binary_pyramids();
+    /*     binary_pyramids(); */
+    /*     verticle_tringle(); */
+    /*     hollow_verticle_tringle(); */
+    /*   right_aligned_pyramid(); */
+    /* triagle(); */
+    /*     hollow_triagle(); */
+    triagle();
 }
