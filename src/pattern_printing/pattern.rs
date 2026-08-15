@@ -862,7 +862,99 @@ pub fn hollow_triagle() {
         i += 1;
     }
 }
+pub fn inverted_hollow_traingle() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = n;
+    while i >= 1 {
+        let mut j = 1;
+        while j <= n - i {
+            print!(" ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            if i == n || i == 1 || j == 1 || j == i {
+                print!("* ");
+            } else {
+                print!("  ")
+            }
 
+            j += 1;
+        }
+        println!();
+        i -= 1;
+    }
+}
+pub fn dimonds() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= n - i {
+            print!(" ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            if j == i || j == 1 {
+                print!("* ")
+            } else {
+                print!("  ");
+            }
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+    let mut i = n - 1;
+    while i >= 1 {
+        let mut j = 1;
+        while j <= n - i {
+            print!(" ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            if j == i || j == 1 {
+                print!("* ")
+            } else {
+                print!("  ");
+            }
+            j += 1;
+        }
+        println!();
+        i -= 1;
+    }
+}
+pub fn crowns() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    let mut i = 1;
+    while i <= n {
+        let mut j = 1;
+        while j <= i {
+            print!("*");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= 2 * n - 2 * i {
+            print!(" ");
+            j += 1;
+        }
+        let mut j = 1;
+        while j <= i {
+            print!("*");
+            j += 1;
+        }
+        println!();
+        i += 1;
+    }
+}
 pub fn pattern_printing() {
     // one_to_n_number(5);
     // one_to_n_number_star(6);
@@ -907,5 +999,7 @@ pub fn pattern_printing() {
     /*   right_aligned_pyramid(); */
     /* triagle(); */
     /*     hollow_triagle(); */
-    triagle();
+    /*    triagle(); */
+    /* inverted_hollow_traingle(); */
+    crowns();
 }
