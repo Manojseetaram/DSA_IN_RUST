@@ -1,5 +1,6 @@
 mod arrays;
 mod contest;
+mod functions;
 mod loops;
 mod pattern_printing;
 mod prefixsum;
@@ -26,4 +27,5 @@ fn main() {
     sets_and_maps::sets::sets_and_maps();
     two_pointers::two::two_pointers();
     contest::contest::contest();
+    functions::function::function();
 }

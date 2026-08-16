@@ -240,5 +240,5 @@ pub fn contest() {
     /*     empty_rectangle(); */
     /*     shifted_pramid(); */
     /* hourglass(); */
-    arrow();
+    /*    arrow(); */
 }
