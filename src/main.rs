@@ -1,4 +1,5 @@
 mod arrays;
+mod contest;
 mod loops;
 mod pattern_printing;
 mod prefixsum;
@@ -24,4 +25,5 @@ fn main() {
     subarrays::sub::subarray();
     sets_and_maps::sets::sets_and_maps();
     two_pointers::two::two_pointers();
+    contest::contest::contest();
 }
