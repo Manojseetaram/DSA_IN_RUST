@@ -395,6 +395,18 @@ pub fn duplicate_number() {
         println!("Number is not found ")
     }
 }
+pub fn print_array_in_reverse() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    a.clear();
+    let arr: Vec<i32> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+}
+
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -412,4 +424,5 @@ pub fn arrays() {
     /* swap_revers(); */
     /*     missing_numbers(); */
     /*     duplicate_number(); */
+    print_array_in_reverse();
 }
