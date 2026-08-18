@@ -188,5 +188,5 @@ pub fn function() {
     /*     l_to_r(); */
     /*    ncr(); */
     /* find_hcf(); */
-    prime();
+    /* prime(); */
 }

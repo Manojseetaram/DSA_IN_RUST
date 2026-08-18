@@ -400,13 +400,45 @@ pub fn print_array_in_reverse() {
     io::stdin().read_line(&mut a).unwrap();
     let n: usize = a.trim().parse().unwrap();
     a.clear();
-    let arr: Vec<i32> = a
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
         .trim()
         .split_whitespace()
         .map(|x| x.parse().unwrap())
         .collect();
+    let mut i = 0;
+    let mut b = vec![0; n];
+    while i < n {
+        b[i] = arr[n - 1 - i];
+        i += 1;
+    }
+    let mut i = 0;
+    while i < n {
+        print!("{} ", b[i]);
+        i += 1;
+    }
+    println!();
 }
+pub fn sum_of_arrayy() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut i = 0;
+    let mut sum = 0;
 
+    while i < n {
+        sum += arr[i];
+        i += 1;
+    }
+    println!("{sum}")
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -424,5 +456,6 @@ pub fn arrays() {
     /* swap_revers(); */
     /*     missing_numbers(); */
     /*     duplicate_number(); */
-    print_array_in_reverse();
+    /*    print_array_in_reverse(); */
+    sum_of_arrayy();
 }
