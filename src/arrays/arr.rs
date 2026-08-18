@@ -439,6 +439,278 @@ pub fn sum_of_arrayy() {
     }
     println!("{sum}")
 }
+pub fn minimm_element_and_its_postion() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut i = 1;
+    let mut min = arr[0];
+    let mut position = 1;
+
+    while i < n {
+        if arr[i] < min {
+            min = arr[i];
+            position = i + 1;
+        }
+        i += 1;
+    }
+    println!("{} {}", min, position);
+}
+pub fn maximum_element_and_its_position() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    if n == 0 {
+        println!("0");
+        return;
+    }
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i128> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut maximum: i128 = arr[0];
+    let mut position: usize = 1;
+    let mut i = 0;
+
+    while i < n {
+        if arr[i] > maximum {
+            maximum = arr[i];
+            position = i + 1
+        }
+
+        i += 1;
+    }
+    println!("{} {}", maximum, position);
+}
+pub fn search_elemen_in_array() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut input = a.trim().split_whitespace();
+    let n: usize = input.next().unwrap().parse().unwrap();
+    let m: i64 = input.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|c| c.parse().unwrap())
+        .collect();
+
+    let mut flag = false;
+    let mut i = 0;
+    while i < n {
+        if arr[i] == m {
+            flag = true;
+            break;
+        }
+        i += 1;
+    }
+    if flag {
+        println!("YES")
+    } else {
+        println!("NO")
+    }
+}
+pub fn count_occurrences() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut input = a.trim().split_whitespace();
+    let n: usize = input.next().unwrap().parse().unwrap();
+    let m: i64 = input.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|c| c.parse().unwrap())
+        .collect();
+    let mut i = 0;
+    let mut count = 0;
+    while i < n {
+        if arr[i] == m {
+            count += 1;
+        }
+        i += 1;
+    }
+    println!("{count}")
+}
+pub fn array_is_sorted() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|c| c.parse().unwrap())
+        .collect();
+    let mut i = 1;
+    let mut flag = true;
+    while i < n {
+        if arr[i] < arr[i - 1] {
+            flag = false;
+            break;
+        }
+        i += 1;
+    }
+    if flag {
+        println!("YES")
+    } else {
+        println!("NO")
+    }
+}
+pub fn alpha() {
+    let n = 8;
+
+    let mut i = 0;
+
+    while i < n {
+        let ch = (b'A' + i as u8) as char;
+        println!("{}", ch);
+        i += 1;
+    }
+}
+pub fn sort() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let t: usize = a.trim().parse().unwrap();
+    for _ in 0..t {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let n: usize = a.trim().parse().unwrap();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let mut arr: Vec<i64> = a
+            .trim()
+            .split_whitespace()
+            .map(|c| c.parse().unwrap())
+            .collect();
+        let mut i = 0;
+        while i < n {
+            let mut j = i + 1;
+            while j < n {
+                if arr[i] > arr[j] {
+                    arr.swap(i, j);
+                }
+                j += 1;
+            }
+            i += 1;
+        }
+        let mut i = 0;
+        while i < n {
+            print!("{} ", arr[i]);
+            i += 1;
+        }
+        println!();
+    }
+}
+pub fn reverse() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut i = 0;
+    let mut j = n - 1;
+
+    while i < j {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i += 1;
+        j -= 1;
+    }
+    let mut i = 0;
+    while i < n {
+        print!("{} ", arr[i]);
+        i += 1;
+    }
+    println!();
+}
+pub fn arrange_the_numbers() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    for _ in 0..n {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let t: usize = a.trim().parse().unwrap();
+        let mut arr = vec![0; t];
+
+        let mut i = 0;
+        let mut j = t - 1;
+        let mut num = 1;
+        let mut fill_left = true;
+
+        while i <= j {
+            if fill_left {
+                arr[i] = num;
+                i += 1;
+            } else {
+                arr[j] = num;
+                j -= 1;
+            }
+            num += 1;
+            fill_left = !fill_left;
+        }
+        let mut i = 0;
+
+        while i < t {
+            print!("{} ", arr[i]);
+            i += 1;
+        }
+        println!();
+    }
+}
+pub fn swap_alternates() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    for _ in 0..n {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let t: usize = a.trim().parse().unwrap();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let mut arr: Vec<i128> = a
+            .trim()
+            .split_whitespace()
+            .map(|x| x.parse().unwrap())
+            .collect();
+        let mut i = 0;
+
+        while i <= t {
+            if i < t - 1 {
+                let temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+            i += 2;
+        }
+        let mut i = 0;
+        while i < t {
+            print!("{} ", arr[i]);
+            i += 1;
+        }
+        println!();
+    }
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -457,5 +729,15 @@ pub fn arrays() {
     /*     missing_numbers(); */
     /*     duplicate_number(); */
     /*    print_array_in_reverse(); */
-    sum_of_arrayy();
+    /*     sum_of_arrayy(); */
+    /*  minimm_element_and_its_postion(); */
+    /*   maximum_element_and_its_position(); */
+    /*     count_occurrences(); */
+    /* array_is_sorted(); */
+    /*     alpha(); */
+    /*   array_is_sorted(); */
+    /*  sort(); */
+    /*     maximum_element_and_its_position(); */
+    /*     arrange_the_numbers(); */
+    swap_alternates();
 }
