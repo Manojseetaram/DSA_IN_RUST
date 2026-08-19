@@ -711,6 +711,50 @@ pub fn swap_alternates() {
         println!();
     }
 }
+pub fn missing_num() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    for _ in 0..n {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let _t: usize = a.trim().parse().unwrap();
+
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let arr: Vec<i64> = a
+            .trim()
+            .split_whitespace()
+            .map(|x| x.parse().unwrap())
+            .collect();
+        let mut i = 0;
+        let mut ans = 0;
+        let mut flag = false;
+        while i < arr.len() {
+            let mut count = 0;
+            let mut j = 0;
+            while j < arr.len() {
+                if arr[j] == arr[i] {
+                    count += 1;
+                }
+                j += 1;
+            }
+            if count == 1 {
+                ans = arr[i];
+                flag = true;
+
+                break;
+            }
+            i += 1;
+        }
+        if flag {
+            println!("{ans}");
+        } else {
+            println!("NO")
+        }
+    }
+}
+
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -739,5 +783,6 @@ pub fn arrays() {
     /*  sort(); */
     /*     maximum_element_and_its_position(); */
     /*     arrange_the_numbers(); */
-    swap_alternates();
+    /*  swap_alternates(); */
+    missing_num();
 }
