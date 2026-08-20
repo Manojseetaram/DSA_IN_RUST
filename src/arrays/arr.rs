@@ -754,6 +754,47 @@ pub fn missing_num() {
         }
     }
 }
+pub fn find_duplicate_number() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let n: usize = a.trim().parse().unwrap();
+    for _ in 0..n {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let _t: usize = a.trim().parse().unwrap();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let arr: Vec<i64> = a
+            .trim()
+            .split_whitespace()
+            .map(|x| x.parse().unwrap())
+            .collect();
+        let mut i = 0;
+        let mut flag = false;
+        let mut ans = 0;
+        while i < arr.len() {
+            let mut j = 0;
+            let mut count = 0;
+            while j < arr.len() {
+                if arr[i] == arr[j] {
+                    count += 1;
+                }
+
+                j += 1;
+            }
+            if count == 2 {
+                ans = arr[i];
+                flag = true;
+            }
+            i += 1;
+        }
+        if flag {
+            println!("{ans}");
+        } else {
+            println!("NO")
+        }
+    }
+}
 
 pub fn arrays() {
     /*   input_output(); */
@@ -784,5 +825,6 @@ pub fn arrays() {
     /*     maximum_element_and_its_position(); */
     /*     arrange_the_numbers(); */
     /*  swap_alternates(); */
-    missing_num();
+    /*     missing_num(); */
+    find_duplicate_number();
 }
