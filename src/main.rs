@@ -1,5 +1,6 @@
 mod arrays;
 mod contest;
+mod contest2;
 mod functions;
 mod loops;
 mod pattern_printing;
@@ -28,4 +29,5 @@ fn main() {
     two_pointers::two::two_pointers();
     contest::contest::contest();
     functions::function::function();
+    contest2::contest::contest();
 }
