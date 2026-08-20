@@ -309,6 +309,7 @@ pub fn swap_revers() {
 pub fn missing_number() {
     let a = [2, 1, 9, 1, 2, 3, 12, 3, 9];
     let n = 9;
+
     let mut i = 0;
     let mut ans = 0;
     let mut flag = false;
@@ -795,7 +796,164 @@ pub fn find_duplicate_number() {
         }
     }
 }
+pub fn intersection_of_arrays() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let t: usize = a.trim().parse().unwrap();
+    for _ in 0..t {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let _n: usize = a.trim().parse().unwrap();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let arr1: Vec<i64> = a
+            .trim()
+            .split_whitespace()
+            .map(|x| x.parse().unwrap())
+            .collect();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let _m: usize = a.trim().parse().unwrap();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let mut arr2: Vec<i64> = a
+            .trim()
+            .split_whitespace()
+            .map(|x| x.parse().unwrap())
+            .collect();
+        let mut ans: Vec<i64> = Vec::new();
+        let mut i = 0;
+        while i < arr1.len() {
+            let mut _flag = false;
+            let mut j = 0;
+            while j < arr2.len() {
+                if arr1[i] == arr2[j] {
+                    ans.push(arr1[i]);
+                    arr2[j] = i64::MIN;
+                    _flag = true;
+                    break;
+                }
 
+                j += 1;
+            }
+
+            i += 1;
+        }
+        let mut k = 0;
+        while k < ans.len() {
+            print!("{} ", ans[k]);
+            k += 1;
+        }
+        println!();
+    }
+}
+pub fn pair_sum() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let t: usize = a.trim().parse().unwrap();
+    for _ in 0..t {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let _n: usize = a.trim().parse().unwrap();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let arr: Vec<i64> = a
+            .trim()
+            .split_whitespace()
+            .map(|x| x.parse().unwrap())
+            .collect();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let x: i64 = a.trim().parse().unwrap();
+        let mut i = 0;
+        let target = x;
+        let mut count = 0;
+        while i < arr.len() {
+            let mut j = 0;
+            while j < arr.len() {
+                if i < j && arr[j] + arr[i] == target {
+                    count += 1;
+                }
+                j += 1;
+            }
+            i += 1;
+        }
+        println!("{count}")
+    }
+}
+pub fn triple() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let t: usize = a.trim().parse().unwrap();
+    for _ in 0..t {
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let _n: usize = a.trim().parse().unwrap();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let arr: Vec<i64> = a
+            .trim()
+            .split_whitespace()
+            .map(|x| x.parse().unwrap())
+            .collect();
+        a.clear();
+        io::stdin().read_line(&mut a).unwrap();
+        let x: i64 = a.trim().parse().unwrap();
+        let mut count = 0;
+        let mut i = 0;
+        let target = x;
+        while i < arr.len() {
+            let mut j = i + 1;
+            while j < arr.len() {
+                let mut h = j + 1;
+                while h < arr.len() {
+                    if arr[i] + arr[j] + arr[h] == target {
+                        count += 1;
+                    }
+                    h += 1;
+                }
+                j += 1;
+            }
+            i += 1;
+        }
+        println!("{count}")
+    }
+}
+pub fn count_quadraplets() {
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    let mut t = a.trim().split_whitespace();
+    let _n: usize = t.next().unwrap().parse().unwrap();
+    let x: i64 = t.next().unwrap().parse().unwrap();
+    a.clear();
+    io::stdin().read_line(&mut a).unwrap();
+    let arr: Vec<i64> = a
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+    let mut count = 0;
+    let mut i = 0;
+    while i < arr.len() {
+        let mut j = i + 1;
+        while j < arr.len() {
+            let mut k = j + 1;
+            while k < arr.len() {
+                let mut l = k + 1;
+                while l < arr.len() {
+                    if arr[i] - 2 * arr[j] + 3 * arr[k] - 4 * arr[l] == x {
+                        count += 1
+                    }
+                    l += 1;
+                }
+                k += 1;
+            }
+            j += 1;
+        }
+        i += 1;
+    }
+    println!("{count}")
+}
 pub fn arrays() {
     /*   input_output(); */
     // reverse_array();
@@ -826,5 +984,9 @@ pub fn arrays() {
     /*     arrange_the_numbers(); */
     /*  swap_alternates(); */
     /*     missing_num(); */
-    find_duplicate_number();
+    /*   find_duplicate_number(); */
+    /*  intersection_of_arrays(); */
+    /*    pair_sum(); */
+    /*    triple(); */
+    /*     count_quadraplets(); */
 }
